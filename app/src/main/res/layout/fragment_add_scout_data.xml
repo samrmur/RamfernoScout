@@ -7,276 +7,282 @@
     tools:context="org.ramferno.scoutapplication.ramfernoscout.AddScoutDataFragment"
     android:nestedScrollingEnabled="false">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_7sdp"
-        android:layout_marginRight="@dimen/_7sdp">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollViewScout" >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter Scout Information"
-            android:id="@+id/scoutInfoEnter"
-            android:textStyle="bold"
-            android:textSize="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_52sdp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Team Number:"
-            android:id="@+id/numberTeam"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/scoutInfoEnter"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter Scout Information"
+                android:id="@+id/scoutInfoEnter"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_52sdp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:id="@+id/editNumber"
-            android:inputType="number"
-            android:hint="Number"
-            android:layout_below="@+id/scoutInfoEnter"
-            android:layout_alignStart="@+id/editPortcullis"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Team Number:"
+                android:id="@+id/numberTeam"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/scoutInfoEnter"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Obstacles"
-            android:id="@+id/obstaclesAll"
-            android:textStyle="bold"
-            android:textSize="@dimen/_17sdp"
-            android:layout_below="@+id/editNumber"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_8sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editNumber"
+                android:inputType="number"
+                android:hint="Number"
+                android:layout_below="@+id/scoutInfoEnter"
+                android:layout_alignStart="@+id/editPortcullis"
+                android:textSize="@dimen/_14sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Portcullis:"
-            android:id="@+id/obsPortcullis"
-            android:textSize="@dimen/_15sdp"
-            android:layout_alignBottom="@+id/editPortcullis"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="4dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Obstacles"
+                android:id="@+id/obstaclesAll"
+                android:textStyle="bold"
+                android:textSize="@dimen/_17sdp"
+                android:layout_below="@+id/editNumber"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_8sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editPortcullis"
-            android:hint="Yes or No"
-            android:layout_below="@+id/obstaclesAll"
-            android:layout_alignStart="@+id/editChevalFrise"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Portcullis:"
+                android:id="@+id/obsPortcullis"
+                android:textSize="@dimen/_15sdp"
+                android:layout_alignBottom="@+id/editPortcullis"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="4dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cheval de Frise:"
-            android:id="@+id/obsChevalFrise"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editPortcullis"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editPortcullis"
+                android:hint="Yes or No"
+                android:layout_below="@+id/obstaclesAll"
+                android:layout_alignStart="@+id/editChevalFrise"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editChevalFrise"
-            android:layout_below="@+id/editPortcullis"
-            android:layout_toEndOf="@+id/obsChevalFrise"
-            android:hint="Yes or No"
-            android:layout_marginLeft="@dimen/_31sdp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cheval de Frise:"
+                android:id="@+id/obsChevalFrise"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editPortcullis"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Moat:"
-            android:id="@+id/obsMoat"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editChevalFrise"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editChevalFrise"
+                android:layout_below="@+id/editPortcullis"
+                android:layout_toEndOf="@+id/obsChevalFrise"
+                android:hint="Yes or No"
+                android:layout_marginLeft="@dimen/_31sdp"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editMoat"
-            android:layout_below="@+id/editChevalFrise"
-            android:layout_alignStart="@+id/editChevalFrise"
-            android:hint="Yes or No"
-            android:layout_marginLeft="0dp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moat:"
+                android:id="@+id/obsMoat"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editChevalFrise"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ramparts:"
-            android:id="@+id/obsRamparts"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editMoat"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editMoat"
+                android:layout_below="@+id/editChevalFrise"
+                android:layout_alignStart="@+id/editChevalFrise"
+                android:hint="Yes or No"
+                android:layout_marginLeft="0dp"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editRamparts"
-            android:layout_below="@+id/editMoat"
-            android:layout_alignStart="@+id/editMoat"
-            android:hint="Yes or No"
-            android:layout_marginLeft="0dp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ramparts:"
+                android:id="@+id/obsRamparts"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editMoat"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Drawbridge:"
-            android:id="@+id/textDrawbridge"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editRamparts"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editRamparts"
+                android:layout_below="@+id/editMoat"
+                android:layout_alignStart="@+id/editMoat"
+                android:hint="Yes or No"
+                android:layout_marginLeft="0dp"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editDrawbridge"
-            android:hint="Yes or No"
-            android:layout_below="@+id/editRamparts"
-            android:layout_alignStart="@+id/editSallyPort"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drawbridge:"
+                android:id="@+id/textDrawbridge"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editRamparts"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sally Port:"
-            android:id="@+id/textSallyPort"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editDrawbridge"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editDrawbridge"
+                android:hint="Yes or No"
+                android:layout_below="@+id/editRamparts"
+                android:layout_alignStart="@+id/editSallyPort"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editSallyPort"
-            android:hint="Yes or No"
-            android:layout_below="@+id/editDrawbridge"
-            android:layout_toEndOf="@+id/obsChevalFrise"
-            android:layout_marginLeft="@dimen/_31sdp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sally Port:"
+                android:id="@+id/textSallyPort"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editDrawbridge"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rock Wall:"
-            android:id="@+id/textRockWall"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editSallyPort"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editSallyPort"
+                android:hint="Yes or No"
+                android:layout_below="@+id/editDrawbridge"
+                android:layout_toEndOf="@+id/obsChevalFrise"
+                android:layout_marginLeft="@dimen/_31sdp"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editRockWall"
-            android:hint="Yes or No"
-            android:layout_below="@+id/editSallyPort"
-            android:layout_toEndOf="@+id/obsChevalFrise"
-            android:layout_marginLeft="@dimen/_31sdp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rock Wall:"
+                android:id="@+id/textRockWall"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editSallyPort"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rock Terrain:"
-            android:id="@+id/textRockTerrain"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editRockWall"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editRockWall"
+                android:hint="Yes or No"
+                android:layout_below="@+id/editSallyPort"
+                android:layout_toEndOf="@+id/obsChevalFrise"
+                android:layout_marginLeft="@dimen/_31sdp"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editRockTerrain"
-            android:hint="Yes or No"
-            android:layout_below="@+id/editRockWall"
-            android:layout_toEndOf="@+id/obsChevalFrise"
-            android:layout_marginLeft="@dimen/_31sdp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rock Terrain:"
+                android:id="@+id/textRockTerrain"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editRockWall"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Low Bar:"
-            android:id="@+id/textLowBar"
-            android:textSize="@dimen/_15sdp"
-            android:layout_below="@+id/editRockTerrain"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editRockTerrain"
+                android:hint="Yes or No"
+                android:layout_below="@+id/editRockWall"
+                android:layout_toEndOf="@+id/obsChevalFrise"
+                android:layout_marginLeft="@dimen/_31sdp"
+                android:textSize="@dimen/_14sdp" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:ems="10"
-            android:id="@+id/editLowBar"
-            android:hint="Yes or No"
-            android:layout_below="@+id/editRockTerrain"
-            android:layout_toEndOf="@+id/obsChevalFrise"
-            android:layout_marginLeft="@dimen/_31sdp"
-            android:textSize="@dimen/_14sdp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low Bar:"
+                android:id="@+id/textLowBar"
+                android:textSize="@dimen/_15sdp"
+                android:layout_below="@+id/editRockTerrain"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_11sdp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:text="Add Data"
-            android:id="@+id/buttonDataAdd"
-            android:textColor="#fff"
-            android:background="@color/colorPrimary"
-            android:layout_below="@+id/editLowBar"
-            android:layout_alignEnd="@+id/textDrawbridge"
-            android:nestedScrollingEnabled="false"
-            android:textSize="@dimen/_11sdp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/editLowBar"
+                android:hint="Yes or No"
+                android:layout_below="@+id/editRockTerrain"
+                android:layout_toEndOf="@+id/obsChevalFrise"
+                android:layout_marginLeft="@dimen/_31sdp"
+                android:textSize="@dimen/_14sdp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:text="Cancel"
-            android:id="@+id/buttonCancel"
-            android:textColor="#fff"
-            android:background="@color/colorPrimary"
-            android:layout_marginRight="@dimen/_17sdp"
-            android:layout_below="@+id/editLowBar"
-            android:layout_alignEnd="@+id/editLowBar"
-            android:textSize="@dimen/_11sdp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Add Data"
+                android:id="@+id/buttonDataAdd"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
+                android:layout_below="@+id/editLowBar"
+                android:layout_alignEnd="@+id/textDrawbridge"
+                android:nestedScrollingEnabled="false"
+                android:textSize="@dimen/_11sdp" />
 
-    </RelativeLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Cancel"
+                android:id="@+id/buttonCancel"
+                android:textColor="#fff"
+                android:background="@color/colorPrimary"
+                android:layout_marginRight="@dimen/_17sdp"
+                android:layout_below="@+id/editLowBar"
+                android:layout_alignEnd="@+id/editLowBar"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+    </ScrollView>
 </FrameLayout>

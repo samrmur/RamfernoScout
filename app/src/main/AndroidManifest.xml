@@ -18,6 +18,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="org.ramferno.scoutapplication.ramfernoscout.MainActivity"
+            android:windowSoftInputMode="adjustResize"
             android:label="Team 3756 Scouting Application"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
