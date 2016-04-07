@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Match Report #"
+        android:id="@+id/textNumberMatch"
+        android:textSize="@dimen/_14sdp"
+        android:textIsSelectable="false"
+        android:textColor="#444040"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_7sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here Number"
+        android:id="@+id/resultNumberMatch"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textNumberMatch"
+        android:textSize="18dp"
+        android:textColor="#444040"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textTitles"
+        android:singleLine="false"
+        android:textSize="@dimen/_10sdp"
+        android:text="Team One"
+        android:layout_marginTop="20dp"
+        android:autoText="false"
+        android:textColor="#444040"
+        android:layout_marginLeft="@dimen/_7sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rectBlue"
+        android:background="#7689b7"
+        android:singleLine="false"
+        android:textSize="@dimen/_14sdp"
+        android:text="SpaceSpaceSpaceSpaceSpaceSpace"
+        android:textColor="#7689b7"
+        android:layout_below="@+id/textTitles"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/_7sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rectRed"
+        android:background="#cf5d5e"
+        android:singleLine="false"
+        android:textSize="@dimen/_14sdp"
+        android:text="SpaceSpaceSpaceSpaceSpaceSpace"
+        android:textColor="#cf5d5e"
+        android:layout_below="@+id/rectBlue"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/_7sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultBlueTeamOne"
+        android:layout_marginTop="39dp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRedTeamOne"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="62dp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultBlueTeamTwo"
+        android:layout_marginTop="39dp"
+        android:layout_marginLeft="@dimen/_72sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRedTeamTwo"
+        android:layout_marginTop="62dp"
+        android:layout_marginLeft="@dimen/_72sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultBlueTeamThree"
+        android:layout_marginTop="39dp"
+        android:layout_marginLeft="@dimen/_135sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRedTeamThree"
+        android:layout_marginTop="62dp"
+        android:layout_marginLeft="@dimen/_135sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultBlueScore"
+        android:layout_marginTop="39dp"
+        android:layout_marginLeft="@dimen/_205sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRedScore"
+        android:layout_marginTop="62dp"
+        android:layout_marginLeft="@dimen/_205sdp"
+        android:textSize="@dimen/_11sdp" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:text="Delete"
+        android:id="@+id/buttonDeleteMatch"
+        android:onClick=""
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/_243sdp"
+        android:layout_marginTop="30dp"
+        android:textSize="@dimen/_10sdp" />
+
+    <TextView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTeamOne"
+        android:layout_below="@+id/buttonDeleteMatch"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTeamTwo"
+        android:singleLine="false"
+        android:textSize="@dimen/_10sdp"
+        android:text="Team Two"
+        android:autoText="false"
+        android:textColor="#444040"
+        android:layout_above="@+id/rectBlue"
+        android:layout_alignStart="@+id/resultBlueTeamTwo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleTeamThree"
+        android:singleLine="false"
+        android:textSize="@dimen/_10sdp"
+        android:text="Team Three"
+        android:autoText="false"
+        android:textColor="#444040"
+        android:layout_above="@+id/rectBlue"
+        android:layout_alignStart="@+id/resultBlueTeamThree" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleScore"
+        android:singleLine="false"
+        android:textSize="@dimen/_10sdp"
+        android:text="Score"
+        android:autoText="false"
+        android:textColor="#444040"
+        android:layout_above="@+id/rectBlue"
+        android:layout_alignStart="@+id/resultBlueScore" />
+
+</RelativeLayout>

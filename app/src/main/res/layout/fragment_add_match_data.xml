@@ -1,0 +1,263 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.ramferno.scoutapplication.ramfernoscout.AddMatchDataFragment"
+    android:id="@+id/add_match_info">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center_horizontal|top">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Match Information"
+            android:id="@+id/matchInfoEnter"
+            android:textStyle="bold"
+            android:textSize="23dp"
+            android:layout_marginTop="@dimen/_52sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Match Number:"
+            android:id="@+id/numberMatch"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/scoutInfoEnter"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="120dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+            android:id="@+id/editNumberMatch"
+            android:inputType="number"
+            android:hint="Number"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="150dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue Alliance"
+            android:id="@+id/titleBlueAlliance"
+            android:textStyle="bold"
+            android:textSize="@dimen/_17sdp"
+            android:layout_below="@+id/editNumber"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="170dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team #1:"
+            android:id="@+id/teamBlueOne"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/titleBlueAlliance"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="@dimen/_15sdp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editBlueOne"
+            android:inputType="number"
+            android:hint="Team"
+            android:layout_marginTop="205dp"
+            android:layout_marginLeft="@dimen/_69sdp"
+            android:singleLine="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team #2:"
+            android:id="@+id/teamBlueTwo"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/teamBlueOne"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editBlueTwo"
+            android:inputType="number"
+            android:hint="Team"
+            android:layout_below="@+id/editBlueOne"
+            android:layout_alignStart="@+id/editBlueOne"
+            android:layout_marginTop="3dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team #3:"
+            android:id="@+id/teamBlueThree"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/teamBlueTwo"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editBlueThree"
+            android:inputType="number"
+            android:hint="Team"
+            android:layout_below="@+id/teamBlueTwo"
+            android:layout_alignStart="@+id/editBlueTwo"
+            android:layout_marginTop="9dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:id="@+id/textBlueScore"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/teamBlueThree"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:singleLine="false" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editBlueScore"
+            android:inputType="number"
+            android:hint="Score"
+            android:layout_below="@+id/editBlueThree"
+            android:layout_alignStart="@+id/editBlueThree" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Red Alliance"
+            android:id="@+id/titleRedAllaince"
+            android:textStyle="bold"
+            android:textSize="@dimen/_17sdp"
+            android:layout_below="@+id/editNumber"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="170dp"
+            android:layout_marginLeft="@dimen/_147sdp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team #1:"
+            android:id="@+id/teamRedOne"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/titleRedAllaince"
+            android:layout_alignStart="@+id/titleRedAllaince"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editRedOne"
+            android:inputType="number"
+            android:hint="Team"
+            android:layout_marginLeft="@dimen/_220sdp"
+            android:layout_alignParentEnd="false"
+            android:layout_marginTop="205dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team #2:"
+            android:id="@+id/teamRedTwo"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/teamRedOne"
+            android:layout_alignStart="@+id/teamRedOne"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editRedTwo"
+            android:inputType="number"
+            android:hint="Team"
+            android:layout_alignTop="@+id/editBlueTwo"
+            android:layout_alignStart="@+id/editRedOne" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Team #3:"
+            android:id="@+id/teamRedThree"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/teamRedTwo"
+            android:layout_alignStart="@+id/teamRedTwo"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editRedThree"
+            android:inputType="number"
+            android:hint="Team"
+            android:layout_below="@+id/editBlueTwo"
+            android:layout_alignStart="@+id/editRedTwo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score:"
+            android:id="@+id/textRedScore"
+            android:textSize="@dimen/_15sdp"
+            android:layout_below="@+id/teamRedThree"
+            android:layout_alignStart="@+id/teamRedThree"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="4"
+            android:id="@+id/editRedScore"
+            android:inputType="number"
+            android:hint="Score"
+            android:layout_alignTop="@+id/editBlueScore"
+            android:layout_alignStart="@+id/editRedThree" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Add Data"
+            android:id="@+id/buttonAddDataMatch"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="31dp"
+            android:layout_below="@+id/editBlueScore"
+            android:layout_alignEnd="@+id/titleBlueAlliance"
+            android:textSize="@dimen/_11sdp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:text="Cancel"
+            android:id="@+id/buttonCancelMatch"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            android:textSize="@dimen/_11sdp"
+            android:layout_alignTop="@+id/buttonAddDataMatch"
+            android:layout_toEndOf="@+id/buttonAddDataMatch"
+            android:layout_marginLeft="100dp" />
+
+    </RelativeLayout>
+</FrameLayout>

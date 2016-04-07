@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultTeamNumber"
+        android:text="Here Number"
+        android:textSize="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#444040"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textPortcullis"
+        android:text="Portcullis:"
+        android:layout_above="@+id/textChevalFrise"
+        android:layout_alignParentStart="true"
+        android:textColor="#444040"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultPortcullis"
+        android:text="Yes/No"
+        android:singleLine="false"
+        android:layout_below="@+id/resultTeamNumber"
+        android:layout_marginLeft="120dp"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textChevalFrise"
+        android:text="Cheval de Frise:"
+        android:layout_below="@+id/resultPortcullis"
+        android:layout_alignParentStart="true"
+        android:singleLine="false"
+        android:textColor="#444040"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultChevalFrise"
+        android:text="Yes/No"
+        android:singleLine="false"
+        android:layout_below="@+id/resultPortcullis"
+        android:layout_alignStart="@+id/resultPortcullis"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMoat"
+        android:singleLine="false"
+        android:layout_below="@+id/textChevalFrise"
+        android:layout_alignParentStart="true"
+        android:text="Moat:"
+        android:textColor="#444040"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultMoat"
+        android:text="Yes/No"
+        android:singleLine="false"
+        android:layout_below="@+id/resultChevalFrise"
+        android:layout_alignStart="@+id/resultChevalFrise"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRamparts"
+        android:text="Ramparts:"
+        android:singleLine="false"
+        android:layout_below="@+id/textMoat"
+        android:layout_alignParentStart="true"
+        android:textColor="#444040"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRamparts"
+        android:text="Yes/No"
+        android:singleLine="false"
+        android:layout_above="@+id/textDrawbridge"
+        android:layout_alignStart="@+id/resultMoat"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDrawbridge"
+        android:text="Drawbridge:"
+        android:singleLine="false"
+        android:layout_below="@+id/textRamparts"
+        android:layout_alignParentStart="true"
+        android:textColor="#444040"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultDrawbridge"
+        android:text="Yes/No"
+        android:singleLine="false"
+        android:layout_below="@+id/resultRamparts"
+        android:layout_alignStart="@+id/resultRamparts"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textSallyPort"
+        android:text="Sally Port:"
+        android:singleLine="false"
+        android:layout_below="@+id/textDrawbridge"
+        android:layout_alignParentStart="true"
+        android:textColor="#444040"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultSallyPort"
+        android:singleLine="false"
+        android:layout_below="@+id/resultDrawbridge"
+        android:layout_alignStart="@+id/resultDrawbridge"
+        android:text="Yes/No"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRockWall"
+        android:text="Rock Wall:"
+        android:singleLine="false"
+        android:layout_alignTop="@+id/resultPortcullis"
+        android:layout_toEndOf="@+id/resultPortcullis"
+        android:layout_marginStart="34dp"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRockWall"
+        android:singleLine="false"
+        android:text="Yes/No"
+        android:layout_marginStart="46dp"
+        android:layout_above="@+id/resultRockTerrain"
+        android:layout_toEndOf="@+id/textRockTerrain"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textRockTerrain"
+        android:text="Rock Terrain:"
+        android:singleLine="false"
+        android:layout_below="@+id/textRockWall"
+        android:layout_alignStart="@+id/textRockWall"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultRockTerrain"
+        android:singleLine="false"
+        android:text="Yes/No"
+        android:layout_alignBottom="@+id/textRockTerrain"
+        android:layout_alignStart="@+id/resultRockWall"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textLowBar"
+        android:text="Low Bar:"
+        android:singleLine="false"
+        android:layout_above="@+id/resultRamparts"
+        android:layout_alignStart="@+id/textRockTerrain"
+        android:textColor="#444040" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultLowBar"
+        android:singleLine="false"
+        android:text="Yes/No"
+        android:layout_below="@+id/resultRockTerrain"
+        android:layout_alignStart="@+id/resultRockTerrain"
+        android:textColor="#444040" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:text="Delete"
+        android:id="@+id/buttonDelete"
+        android:onClick=""
+        android:layout_below="@+id/textLowBar"
+        android:layout_toStartOf="@+id/resultLowBar"
+        android:layout_above="@+id/resultSallyPort" />
+</RelativeLayout>

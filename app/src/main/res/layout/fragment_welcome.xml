@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".WelcomeFragment">
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ramHeader"
+                android:src="@drawable/ramfernoheader"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_54sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:id="@+id/welcomeHeader"
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp"
+                android:textIsSelectable="false"
+                android:layout_alignStart="@+id/welcomeText"
+                android:layout_marginTop="@dimen/_135sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/welcomeText"
+                android:text="Welcome to the official scouting application of the Sir Wilfrid Laurier Secondary School Robotics Team, RamFerno."
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_160sdp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RamFerno is an extracurricular program dedicated to creating opportunities for students who have an interest in science and technology. FIRST is an association that gives high school students the chance to apply already acquired skills, while gaining new knowledge and understanding. In addition, FIRST allows high school students to develop new relationships with mentors who are already working in their field of interest; this opens many doors and scholarship possibilities for students. RamFerno consists of dedicated students possesing different skills that will be used to achieve a common goal. This goal can be accomplished with the aid of mentors, sponsors, and community encouragement."
+                android:id="@+id/welcomeText2"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/_235sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FIRST competitions are world-wide events with attendance of over 195,000 participants and spectators each year. Sir Wilfrid Laurier Secondary School is one of only two schools in London, Ontario participating in the upcoming Waterloo competition."
+                android:id="@+id/welcomeText3"
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignTop="@+id/welcomeText2"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/_300sdp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

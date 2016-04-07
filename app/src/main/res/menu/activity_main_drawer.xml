@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_welcome" android:title="Welcome" />
+        <item android:id="@+id/nav_facebook" android:title="Facebook Group" />
+    </group>
+
+    <item android:title="Scouting">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/nav_scout" android:title="Team Scouting Report" />
+                <item android:id="@+id/nav_match" android:title="Match Report" />
+            </group>
+        </menu>
+    </item>
+
+</menu>
