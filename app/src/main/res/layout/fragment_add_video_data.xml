@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.ramferno.scoutapplication.ramfernoscout.AddVideoDataFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Video Information"
+        android:id="@+id/videoEnterInfo"
+        android:textStyle="bold"
+        android:textSize="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_52sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Record"
+        android:id="@+id/buttonRecordVideo"
+        android:layout_below="@+id/videoEnterInfo"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginLeft="@dimen/_7sdp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/buttonCancelVideo"
+        android:layout_alignTop="@+id/buttonSaveVideo"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/_7sdp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/buttonSaveVideo"
+        android:layout_alignTop="@+id/buttonRecordVideo"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team Number:"
+        android:id="@+id/textTeamRecorded"
+        android:textSize="@dimen/_15sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/buttonRecordVideo"
+        android:layout_marginTop="@dimen/_130sdp"
+        android:singleLine="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:id="@+id/editTeamRecorded"
+        android:inputType="number"
+        android:hint="Number"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/buttonCancelVideo"
+        android:layout_alignStart="@+id/buttonSaveVideo" />
+
+</RelativeLayout>
