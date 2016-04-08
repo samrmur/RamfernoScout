@@ -23,7 +23,9 @@
         android:layout_below="@+id/videoEnterInfo"
         android:layout_alignParentStart="true"
         android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginLeft="@dimen/_7sdp" />
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,7 +34,9 @@
         android:id="@+id/buttonCancelVideo"
         android:layout_alignTop="@+id/buttonSaveVideo"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="@dimen/_7sdp" />
+        android:layout_marginRight="@dimen/_7sdp"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff" />
 
     <Button
         android:layout_width="wrap_content"
@@ -40,7 +44,9 @@
         android:text="Save"
         android:id="@+id/buttonSaveVideo"
         android:layout_alignTop="@+id/buttonRecordVideo"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff" />
 
     <TextView
         android:layout_width="wrap_content"

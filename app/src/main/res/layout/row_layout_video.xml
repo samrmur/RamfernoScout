@@ -7,23 +7,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/resultTeamRecorded"
         android:text="Here Number"
-        android:textSize="18dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
+        android:textSize="@dimen/_14sdp"
         android:textColor="#444040"
-        android:textStyle="bold"
-        android:layout_marginLeft="@dimen/_7sdp" />
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginLeft="@dimen/_4sdp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play"
         android:id="@+id/buttonPlayVideo"
-        android:layout_below="@+id/resultTeamRecorded"
-        android:layout_alignStart="@+id/resultTeamRecorded"
         android:longClickable="false"
         android:textColor="#fff"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/resultTeamRecorded"
+        android:layout_alignStart="@+id/textView2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -39,10 +38,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/blankSpace"
+        android:text="New Text"
+        android:id="@+id/textView"
+        android:layout_below="@+id/buttonPlayVideo"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/buttonPlayVideo"
-        android:layout_below="@+id/buttonPlayVideo" />
+        android:textSize="10dp"
+        android:textColor="#fff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team:"
+        android:id="@+id/textView2"
+        android:textColor="#444040"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

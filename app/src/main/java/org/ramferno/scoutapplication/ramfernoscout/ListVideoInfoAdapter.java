@@ -81,6 +81,7 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
                 else {
                     uri = Uri.parse(layoutHandler.VIDEO_PATH);
                     Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     v.getContext().startActivity(intent);
                 } //End of if statement
             } //End of onClick
