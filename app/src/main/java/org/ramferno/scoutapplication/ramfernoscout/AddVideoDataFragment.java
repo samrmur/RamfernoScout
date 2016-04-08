@@ -20,10 +20,10 @@ import android.widget.Toast;
  */
 public class AddVideoDataFragment extends Fragment {
     private int REQUEST_CODE = 0;
-    String stringUri;
     Button btnRecordVideo, btnSaveVideo, btnCancelVideo;
     DatabaseHelperVideo myDB;
     EditText tTeam;
+    String sVideoPath;
     SQLiteDatabase sqLiteDatabase;
 
     public AddVideoDataFragment() {
@@ -86,9 +86,8 @@ public class AddVideoDataFragment extends Fragment {
     } //End of onCreateView
 
     public void addVideoInfo() {
-        //Converts all editText values into strings
+        //Converts editText values into strings
         String sTeam = tTeam.getText().toString();
-        String sVideoPath = stringUri;
 
         //Saves data
         sqLiteDatabase = myDB.getWritableDatabase();
@@ -100,7 +99,7 @@ public class AddVideoDataFragment extends Fragment {
     public void onActivityResult (int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
             Uri videoUri = data.getData();
-            stringUri = videoUri.toString();
+            sVideoPath = videoUri.toString();
         } //End of if statement
     } //End of onActivityResult
 } //End of class

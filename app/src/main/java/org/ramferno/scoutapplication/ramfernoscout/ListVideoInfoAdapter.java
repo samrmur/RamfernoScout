@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
     public void deleteRow(String rowId){
         SQLiteDatabase db = databaseHelperVideo.getWritableDatabase();
         db.delete(DatabaseContractVideo.NewDataInfo.TABLE_NAME,
-                DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH + "=?",
+                DatabaseContractVideo.NewDataInfo.COL_TEAM + "=?",
                 new String[] {String.valueOf(rowId)});
     } //End of deleteRow
 
@@ -70,20 +71,24 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
 
         //Plays Video
         Button playBtn = (Button) row.findViewById(R.id.buttonPlayVideo);
-        playBtn.setTag(databaseProviderVideo.getVideoPath());
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri uri;
-                uri = Uri.parse(layoutHandler.VIDEO_PATH);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                v.getContext().startActivity(intent);
+                if (layoutHandler.VIDEO_PATH == null) {
+                    Toast.makeText(getContext(), "Video file not found", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    uri = Uri.parse(layoutHandler.VIDEO_PATH);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    v.getContext().startActivity(intent);
+                } //End of if statement
             } //End of onClick
         }); //End of setOnClickListener
 
         //Deletes ListView row
         Button deleteBtn = (Button) row.findViewById(R.id.buttonDeleteVideo);
-        deleteBtn.setTag(databaseProviderVideo.getVideoPath());
+        deleteBtn.setTag(databaseProviderVideo.getTeam());
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
