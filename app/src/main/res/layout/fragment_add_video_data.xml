@@ -68,6 +68,7 @@
         android:hint="Number"
         android:textSize="@dimen/_14sdp"
         android:layout_below="@+id/buttonCancelVideo"
-        android:layout_alignStart="@+id/buttonSaveVideo" />
+        android:layout_alignStart="@+id/buttonSaveVideo"
+        android:maxLength="4" />
 
 </RelativeLayout>

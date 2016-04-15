@@ -3,7 +3,6 @@
 
     <group android:checkableBehavior="single">
         <item android:id="@+id/nav_welcome" android:title="Welcome" />
-        <item android:id="@+id/nav_facebook" android:title="Facebook Group" />
     </group>
 
     <item android:title="Scouting">

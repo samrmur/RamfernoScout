@@ -47,7 +47,8 @@
                 android:inputType="number"
                 android:hint="Number"
                 android:layout_marginTop="110dp"
-                android:layout_marginLeft="150dp" />
+                android:layout_marginLeft="150dp"
+                android:maxLength="3" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,7 +80,8 @@
                 android:hint="Team"
                 android:layout_marginTop="205dp"
                 android:layout_marginLeft="@dimen/_69sdp"
-                android:singleLine="false" />
+                android:singleLine="false"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -100,7 +102,8 @@
                 android:hint="Team"
                 android:layout_below="@+id/editBlueOne"
                 android:layout_alignStart="@+id/editBlueOne"
-                android:layout_marginTop="3dp" />
+                android:layout_marginTop="3dp"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,7 +124,8 @@
                 android:hint="Team"
                 android:layout_below="@+id/teamBlueTwo"
                 android:layout_alignStart="@+id/editBlueTwo"
-                android:layout_marginTop="9dp" />
+                android:layout_marginTop="9dp"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -142,7 +146,8 @@
                 android:inputType="number"
                 android:hint="Score"
                 android:layout_below="@+id/editBlueThree"
-                android:layout_alignStart="@+id/editBlueThree" />
+                android:layout_alignStart="@+id/editBlueThree"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -175,7 +180,8 @@
                 android:hint="Team"
                 android:layout_marginLeft="@dimen/_220sdp"
                 android:layout_alignParentEnd="false"
-                android:layout_marginTop="205dp" />
+                android:layout_marginTop="205dp"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -195,7 +201,8 @@
                 android:inputType="number"
                 android:hint="Team"
                 android:layout_alignTop="@+id/editBlueTwo"
-                android:layout_alignStart="@+id/editRedOne" />
+                android:layout_alignStart="@+id/editRedOne"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -215,7 +222,8 @@
                 android:inputType="number"
                 android:hint="Team"
                 android:layout_below="@+id/editBlueTwo"
-                android:layout_alignStart="@+id/editRedTwo" />
+                android:layout_alignStart="@+id/editRedTwo"
+                android:maxLength="4" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -235,7 +243,8 @@
                 android:inputType="number"
                 android:hint="Score"
                 android:layout_alignTop="@+id/editBlueScore"
-                android:layout_alignStart="@+id/editRedThree" />
+                android:layout_alignStart="@+id/editRedThree"
+                android:maxLength="4" />
 
             <Button
                 android:layout_width="wrap_content"

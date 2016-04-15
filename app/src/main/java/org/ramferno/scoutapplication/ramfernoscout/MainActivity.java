@@ -1,5 +1,6 @@
 package org.ramferno.scoutapplication.ramfernoscout;
 
+import android.app.FragmentManager;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -77,13 +78,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
             // Handle the camera action
-        }
-        else if (id == R.id.nav_facebook) {
-            FacebookFragment fragment = new FacebookFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
         }
         else if (id == R.id.nav_scout) {
             //Set the fragment initially

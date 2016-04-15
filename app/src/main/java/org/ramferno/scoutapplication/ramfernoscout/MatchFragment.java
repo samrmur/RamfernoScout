@@ -2,7 +2,6 @@ package org.ramferno.scoutapplication.ramfernoscout;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -23,14 +22,13 @@ public class MatchFragment extends Fragment {
     Cursor cursor;
     ListMatchInfoAdapter listMatchInfoAdapter;
 
-
     public MatchFragment() {
         // Required empty public constructor
     } //End of MatchFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_match, null, false);
+        View view = inflater.inflate(R.layout.fragment_match, container, false);
         eListMatchInfo = (ListView) view.findViewById(R.id.listMatchInfo);
         listMatchInfoAdapter = new ListMatchInfoAdapter(getActivity().getApplicationContext(), R.layout.row_layout_match);
         eListMatchInfo.setAdapter(listMatchInfoAdapter);
