@@ -13,5 +13,11 @@ public class DatabaseContract {
         public static final String COL_ROCK_WALL = "ROCK_WALL";
         public static final String COL_ROCK_TERRAIN = "ROCK_TERRAIN";
         public static final String COL_LOW_BAR = "LOW_BAR";
+        public static final String COL_AUTO_HIGH = "AUTO_HIGH";
+        public static final String COL_AUTO_LOW = "AUTO_LOW";
+        public static final String COL_TELE_HIGH = "TELE_HIGH";
+        public static final String COL_TELE_LOW = "TELE_LOW";
+        public static final String COL_TELE_PLAY = "TELE_PLAY";
+        public static final String COL_HANG = "HANG";
     } //End of NewDataInfo
 } //End of class

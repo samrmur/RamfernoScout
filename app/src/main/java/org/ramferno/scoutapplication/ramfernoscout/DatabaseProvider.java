@@ -11,6 +11,12 @@ public class DatabaseProvider {
     private String rockWall;
     private String rockTerrain;
     private String lowBar;
+    private String autoHigh;
+    private String autoLow;
+    private String teleHigh;
+    private String teleLow;
+    private String telePlay;
+    private String hang;
 
     public String getTeamNumber() {
         return teamNumber;
@@ -92,8 +98,58 @@ public class DatabaseProvider {
         this.lowBar = lowBar;
     }
 
+    public String getAutoHigh() {
+        return autoHigh;
+    }
+
+    public void setAutoHigh(String autoHigh) {
+        this.autoHigh = autoHigh;
+    }
+
+    public String getAutoLow() {
+        return autoLow;
+    }
+
+    public void setAutoLow(String autoLow) {
+        this.autoLow = autoLow;
+    }
+
+    public String getTeleHigh() {
+        return teleHigh;
+    }
+
+    public void setTeleHigh(String teleHigh) {
+        this.teleHigh = teleHigh;
+    }
+
+    public String getTeleLow() {
+        return teleLow;
+    }
+
+    public void setTeleLow(String teleLow) {
+        this.teleLow = teleLow;
+    }
+
+    public String getTelePlay() {
+        return telePlay;
+    }
+
+    public void setTelePlay(String telePlay) {
+        this.telePlay = telePlay;
+    }
+
+    public String getHang() {
+        return hang;
+    }
+
+    public void setHang(String hang) {
+        this.hang = hang;
+    }
+
     public DatabaseProvider(String teamNumber, String portcullis, String chevalFrise, String moat, String ramparts,
-                            String drawbridge, String sallyPort, String rockWall, String rockTerrain, String lowBar){
+                            String drawbridge, String sallyPort, String rockWall, String rockTerrain, String lowBar,
+                            String autoHigh, String autoLow, String teleHigh, String teleLow, String telePlay,
+                            String hang) {
         this.teamNumber = teamNumber;
         this.portcullis = portcullis;
         this.chevalFrise = chevalFrise;
@@ -104,5 +160,11 @@ public class DatabaseProvider {
         this.rockWall = rockWall;
         this.rockTerrain = rockTerrain;
         this.lowBar = lowBar;
+        this.autoHigh = autoHigh;
+        this.autoLow = autoLow;
+        this.teleHigh = teleHigh;
+        this.teleLow = teleLow;
+        this.telePlay = telePlay;
+        this.hang = hang;
     } //End of DatabaseProvider
 } //End of DatabaseProvider

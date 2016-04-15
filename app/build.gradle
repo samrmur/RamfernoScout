@@ -29,4 +29,5 @@ dependencies {
     compile 'com.android.support:support-v4:23.2.0'
     compile 'com.intuit.sdp:sdp-android:1.0.2'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.5.0'
+    compile 'com.android.volley:volley:1.0.0'
 }

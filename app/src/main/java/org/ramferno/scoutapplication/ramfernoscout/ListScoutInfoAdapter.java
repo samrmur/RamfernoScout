@@ -22,7 +22,8 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
     } //End of ListDataScoutInfoAdapter
 
     static class LayoutHandler {
-        TextView TEAM_NUMBER, PORTCULLIS, CHEVAL_FRISE, MOAT, RAMPARTS, DRAWBRIDGE, SALLY_PORT, ROCK_WALL, ROCK_TERRAIN, LOW_BAR;
+        TextView TEAM_NUMBER, PORTCULLIS, CHEVAL_FRISE, MOAT, RAMPARTS, DRAWBRIDGE, SALLY_PORT, ROCK_WALL, ROCK_TERRAIN, LOW_BAR, AUTO_HIGH, AUTO_LOW,
+                TELE_HIGH, TELE_LOW, TELE_PLAY, HANG;
     } //End of LayoutHandler
 
     @Override
@@ -66,6 +67,12 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
             layoutHandler.ROCK_WALL = (TextView) row.findViewById(R.id.resultRockWall);
             layoutHandler.ROCK_TERRAIN = (TextView) row.findViewById(R.id.resultRockTerrain);
             layoutHandler.LOW_BAR = (TextView) row.findViewById(R.id.resultLowBar);
+            layoutHandler.AUTO_HIGH = (TextView) row.findViewById(R.id.resultHighGoalAuto);
+            layoutHandler.AUTO_LOW = (TextView) row.findViewById(R.id.resultLowGoalAuto);
+            layoutHandler.TELE_HIGH = (TextView) row.findViewById(R.id.resultHighGoal);
+            layoutHandler.TELE_LOW = (TextView) row.findViewById(R.id.resultLowGoal);
+            layoutHandler.TELE_PLAY = (TextView) row.findViewById(R.id.resultOffDef);
+            layoutHandler.HANG = (TextView) row.findViewById(R.id.resultHang);
             row.setTag(layoutHandler);
         }
         else {
@@ -82,6 +89,12 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
         layoutHandler.ROCK_WALL.setText(databaseProvider.getRockWall());
         layoutHandler.ROCK_TERRAIN.setText(databaseProvider.getRockTerrain());
         layoutHandler.LOW_BAR.setText(databaseProvider.getLowBar());
+        layoutHandler.AUTO_HIGH.setText(databaseProvider.getAutoHigh());
+        layoutHandler.AUTO_LOW.setText(databaseProvider.getAutoLow());
+        layoutHandler.TELE_HIGH.setText(databaseProvider.getTeleHigh());
+        layoutHandler.TELE_LOW.setText(databaseProvider.getTeleLow());
+        layoutHandler.TELE_PLAY.setText(databaseProvider.getTelePlay());
+        layoutHandler.HANG.setText(databaseProvider.getHang());
 
         //Deletes ListView row
         Button deleteBtn = (Button) row.findViewById(R.id.buttonDelete);
