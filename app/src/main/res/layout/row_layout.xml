@@ -10,11 +10,10 @@
         android:id="@+id/resultTeamNumber"
         android:text="Here Number"
         android:textSize="18dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:textColor="#444040"
         android:textStyle="bold"
-        android:layout_marginLeft="@dimen/_7sdp" />
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textLowBar" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +23,8 @@
         android:textStyle="bold|italic"
         android:layout_above="@+id/textPortcullis"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="@dimen/_7sdp" />
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:textColor="#646262" />
 
     <TextView
         android:layout_width="100dp"
@@ -220,7 +220,8 @@
         android:textStyle="bold|italic"
         android:layout_below="@+id/textLowBar"
         android:layout_marginLeft="@dimen/_7sdp"
-        android:layout_marginTop="@dimen/_10sdp" />
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="#646262" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -269,7 +270,8 @@
         android:id="@+id/textTitleTeleoperated"
         android:textStyle="bold|italic"
         android:layout_above="@+id/textHighGoal"
-        android:layout_alignStart="@+id/textHighGoal" />
+        android:layout_alignStart="@+id/textHighGoal"
+        android:textColor="#646262" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -338,7 +340,8 @@
         android:id="@+id/textTitleEndGame"
         android:textStyle="bold|italic"
         android:layout_above="@+id/resultSallyPort"
-        android:layout_alignStart="@+id/textOffDef" />
+        android:layout_alignStart="@+id/textOffDef"
+        android:textColor="#646262" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -369,7 +372,19 @@
         android:id="@+id/buttonDelete"
         android:onClick=""
         android:layout_marginStart="46dp"
-        android:layout_alignBottom="@+id/resultLowGoalAuto"
+        android:layout_below="@+id/resultLowBar"
         android:layout_toEndOf="@+id/resultHighGoalAuto" />
+
+    <TextView
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:text="Team:"
+        android:textSize="18dp"
+        android:textColor="#444040"
+        android:textStyle="bold"
+        android:layout_alignBottom="@+id/resultTeamNumber"
+        android:layout_alignStart="@+id/textTitleObs"
+        android:layout_alignEnd="@+id/textLowGoalAuto" />
 
 </RelativeLayout>

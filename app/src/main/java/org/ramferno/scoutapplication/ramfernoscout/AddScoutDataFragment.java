@@ -98,11 +98,11 @@ public class AddScoutDataFragment extends Fragment {
         String sRockTerrain = tRockTerrain.getText().toString();
         String sLowBar = tLowBar.getText().toString();
         String sAutoHigh = tAutoHigh.getText().toString();
-        String sAutoLow = tAutoHigh.getText().toString();
-        String sTeleHigh = tAutoHigh.getText().toString();
-        String sTeleLow = tAutoHigh.getText().toString();
-        String sTelePlay = tAutoHigh.getText().toString();
-        String sHang = tAutoHigh.getText().toString();
+        String sAutoLow = tAutoLow.getText().toString();
+        String sTeleHigh = tTeleHigh.getText().toString();
+        String sTeleLow = tTeleLow.getText().toString();
+        String sTelePlay = tTelePlay.getText().toString();
+        String sHang = tHang.getText().toString();
 
         //Saves data
         sqLiteDatabase = myDB.getWritableDatabase();

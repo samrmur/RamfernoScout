@@ -40,7 +40,8 @@ public class ScoutFragment extends Fragment {
         if(cursor.moveToFirst()){
             do {
                 //Declare all strings
-                final String teamNumber, portcullis, chevalFrise, moat, ramparts, drawbridge, sallyPort, rockWall, rockTerrain, lowBar;
+                final String teamNumber, portcullis, chevalFrise, moat, ramparts, drawbridge, sallyPort, rockWall, rockTerrain, lowBar,
+                        autoHigh, autoLow, teleHigh, teleLow, telePlay, hang;
 
                 //Get strings from cursor
                 teamNumber = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_NUMBER));
@@ -53,10 +54,16 @@ public class ScoutFragment extends Fragment {
                 rockWall = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_ROCK_WALL));
                 rockTerrain = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_ROCK_TERRAIN));
                 lowBar = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_LOW_BAR));
+                autoHigh = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_AUTO_HIGH));
+                autoLow = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_AUTO_LOW));
+                teleHigh = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_TELE_HIGH));
+                teleLow = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_TELE_LOW));
+                telePlay = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_TELE_PLAY));
+                hang = cursor.getString(cursor.getColumnIndex(DatabaseContract.NewDataInfo.COL_HANG));
 
                 //Get methods from DatabaseProvider
                 DatabaseProvider databaseProvider = new DatabaseProvider(teamNumber, portcullis, chevalFrise, moat, ramparts,
-                        drawbridge, sallyPort, rockWall, rockTerrain, lowBar);
+                        drawbridge, sallyPort, rockWall, rockTerrain, lowBar, autoHigh, autoLow, teleHigh, teleLow, telePlay, hang);
 
                 //Pass objects to add method
                 listScoutInfoAdapter.add(databaseProvider);
