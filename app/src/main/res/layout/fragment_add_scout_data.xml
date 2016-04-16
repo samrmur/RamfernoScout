@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/add_scout_data"
     android:layout_width="match_parent"
@@ -423,4 +423,4 @@
 
         </RelativeLayout>
     </ScrollView>
-</ScrollView>
+</FrameLayout>
