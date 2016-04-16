@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/add_scout_data"
     android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                 android:textSize="@dimen/_17sdp"
                 android:layout_below="@+id/editNumber"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_8sdp" />
+                android:layout_marginTop="@dimen/_7sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -69,20 +69,16 @@
                 android:id="@+id/obsPortcullis"
                 android:textSize="@dimen/_15sdp"
                 android:layout_alignBottom="@+id/editPortcullis"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="4dp" />
+                android:layout_alignParentStart="true" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editPortcullis"
-                android:hint="Yes or No"
-                android:maxLength="5"
+                android:textSize="@dimen/_14sdp"
                 android:layout_below="@+id/obstaclesAll"
-                android:layout_alignStart="@+id/editChevalFrise"
-                android:textSize="@dimen/_14sdp" />
+                android:layout_alignStart="@+id/editMoat" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,22 +86,18 @@
                 android:text="Cheval de Frise:"
                 android:id="@+id/obsChevalFrise"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editPortcullis"
+                android:layout_below="@+id/obsPortcullis"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editChevalFrise"
-                android:layout_below="@+id/editPortcullis"
-                android:layout_toEndOf="@+id/obsChevalFrise"
-                android:hint="Yes or No"
-                android:maxLength="5"
-                android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_14sdp"
+                android:layout_above="@+id/obsMoat"
+                android:layout_alignStart="@+id/editPortcullis" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,22 +105,17 @@
                 android:text="Moat:"
                 android:id="@+id/obsMoat"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editChevalFrise"
+                android:layout_below="@+id/obsChevalFrise"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editMoat"
-                android:layout_below="@+id/editChevalFrise"
-                android:layout_alignStart="@+id/editChevalFrise"
-                android:hint="Yes or No"
-                android:maxLength="5"
-                android:layout_marginLeft="0dp"
-                android:textSize="@dimen/_14sdp" />
+                android:layout_above="@+id/obsRamparts"
+                android:layout_alignStart="@+id/editRamparts" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -136,113 +123,93 @@
                 android:text="Ramparts:"
                 android:id="@+id/obsRamparts"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editMoat"
+                android:layout_below="@+id/obsMoat"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editRamparts"
-                android:layout_below="@+id/editMoat"
-                android:layout_alignStart="@+id/editMoat"
-                android:hint="Yes or No"
-                android:layout_marginLeft="0dp"
                 android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:maxLength="5"
+                android:layout_alignBottom="@+id/obsRamparts"
+                android:layout_alignStart="@+id/editDrawbridge" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Drawbridge:"
-                android:id="@+id/textDrawbridge"
+                android:id="@+id/obsDrawbridge"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editRamparts"
+                android:layout_below="@+id/obsRamparts"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editDrawbridge"
-                android:hint="Yes or No"
-                android:layout_below="@+id/editRamparts"
-                android:layout_alignStart="@+id/editSallyPort"
                 android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_above="@+id/obsSallyPort"
+                android:layout_alignStart="@+id/editSallyPort" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sally Port:"
-                android:id="@+id/textSallyPort"
+                android:id="@+id/obsSallyPort"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editDrawbridge"
+                android:layout_below="@+id/obsDrawbridge"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editSallyPort"
-                android:hint="Yes or No"
-                android:layout_below="@+id/editDrawbridge"
-                android:layout_toEndOf="@+id/obsChevalFrise"
-                android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_above="@+id/obsRockWall"
+                android:layout_alignStart="@+id/editRockWall" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rock Wall:"
-                android:id="@+id/textRockWall"
+                android:id="@+id/obsRockWall"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editSallyPort"
+                android:layout_below="@+id/obsSallyPort"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editRockWall"
-                android:hint="Yes or No"
-                android:layout_below="@+id/editSallyPort"
-                android:layout_toEndOf="@+id/obsChevalFrise"
-                android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_above="@+id/obsRockTerrain"
+                android:layout_alignStart="@+id/editRockTerrain" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rock Terrain:"
-                android:id="@+id/textRockTerrain"
+                android:id="@+id/obsRockTerrain"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editRockWall"
+                android:layout_below="@+id/obsRockWall"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editRockTerrain"
-                android:hint="Yes or No"
-                android:layout_below="@+id/editRockWall"
-                android:layout_toEndOf="@+id/obsChevalFrise"
-                android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_above="@+id/textLowBar"
+                android:layout_alignStart="@+id/editHighGoal" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -250,22 +217,17 @@
                 android:text="Low Bar:"
                 android:id="@+id/textLowBar"
                 android:textSize="@dimen/_15sdp"
-                android:layout_below="@+id/editRockTerrain"
+                android:layout_below="@+id/obsRockTerrain"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="@dimen/_11sdp" />
+                android:layout_marginTop="@dimen/_14sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editLowBar"
-                android:hint="Yes or No"
-                android:layout_below="@+id/editRockTerrain"
-                android:layout_toEndOf="@+id/obsChevalFrise"
-                android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_alignBottom="@+id/textLowBar"
+                android:layout_alignStart="@+id/editRockTerrain" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -288,18 +250,15 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/_11sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editHighGoal"
-                android:hint="Yes or No"
                 android:layout_below="@+id/autonomousAll"
                 android:layout_toEndOf="@+id/obsChevalFrise"
                 android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_marginTop="@dimen/_7sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -311,18 +270,15 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/_11sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editLowGoal"
-                android:hint="Yes or No"
                 android:layout_below="@+id/editHighGoal"
                 android:layout_toEndOf="@+id/obsChevalFrise"
                 android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp"
-                android:maxLength="5" />
+                android:layout_marginTop="@dimen/_7sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -345,17 +301,15 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/_11sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editHighGoalOp"
-                android:hint="Yes or No"
                 android:layout_below="@+id/teleoperatedAll"
                 android:layout_toEndOf="@+id/obsChevalFrise"
                 android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp" />
+                android:layout_marginTop="@dimen/_7sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -367,17 +321,16 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/_11sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editLowGoalOp"
-                android:hint="Yes or No"
                 android:layout_below="@+id/editHighGoalOp"
                 android:layout_toEndOf="@+id/obsChevalFrise"
                 android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_7sdp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -422,17 +375,14 @@
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="@dimen/_11sdp" />
 
-            <EditText
+            <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ems="10"
                 android:id="@+id/editHang"
-                android:hint="Yes or No"
-                android:layout_below="@+id/endGameAll"
-                android:layout_toEndOf="@+id/obsChevalFrise"
-                android:layout_marginLeft="@dimen/_31sdp"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="@dimen/_14sdp"
+                android:layout_above="@+id/buttonCancel"
+                android:layout_alignParentEnd="true" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -442,11 +392,11 @@
                 android:id="@+id/buttonDataAdd"
                 android:textColor="#fff"
                 android:background="@color/colorPrimary"
-                android:layout_below="@+id/editHang"
-                android:layout_alignEnd="@+id/textDrawbridge"
                 android:nestedScrollingEnabled="false"
                 android:textSize="@dimen/_11sdp"
-                android:layout_marginTop="@dimen/_3sdp" />
+                android:layout_below="@+id/textHang"
+                android:layout_toEndOf="@+id/textHang"
+                android:layout_marginTop="@dimen/_5sdp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -456,11 +406,10 @@
                 android:id="@+id/buttonCancel"
                 android:textColor="#fff"
                 android:background="@color/colorPrimary"
-                android:layout_marginRight="@dimen/_17sdp"
-                android:layout_below="@+id/editHang"
-                android:layout_alignEnd="@+id/editLowGoal"
                 android:textSize="@dimen/_11sdp"
-                android:layout_marginTop="@dimen/_3sdp" />
+                android:layout_below="@+id/textHang"
+                android:layout_alignEnd="@+id/editHighGoalOp"
+                android:layout_marginTop="@dimen/_5sdp" />
 
             <TextView
                 android:layout_width="fill_parent"
@@ -471,6 +420,7 @@
                 android:textColor="#fff"
                 android:textSize="@dimen/_5sdp"
                 android:textIsSelectable="false" />
+
         </RelativeLayout>
     </ScrollView>
-</FrameLayout>
+</ScrollView>
