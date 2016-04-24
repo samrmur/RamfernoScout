@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+
+import org.ramferno.scoutapplication.ramfernoscout.contracts.DatabaseContract;
+import org.ramferno.scoutapplication.ramfernoscout.helpers.DatabaseHelper;
+import org.ramferno.scoutapplication.ramfernoscout.providers.DatabaseProvider;
+import org.ramferno.scoutapplication.ramfernoscout.adapters.ListScoutInfoAdapter;
+import org.ramferno.scoutapplication.ramfernoscout.R;
 
 /**
  * A simple {@link Fragment} subclass.

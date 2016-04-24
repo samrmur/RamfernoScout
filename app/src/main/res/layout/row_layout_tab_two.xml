@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Achievement Here"
+        android:id="@+id/textAchievementName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tournament:"
+        android:id="@+id/titleAchievementTourny"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textAchievementName"
+        android:layout_alignStart="@+id/textAchievementName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year:"
+        android:id="@+id/titleAcheivementYear"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/titleAchievementTourny"
+        android:layout_alignStart="@+id/titleAchievementTourny" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tourny Here"
+        android:id="@+id/textAchievementTourny"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textAchievementName"
+        android:layout_toEndOf="@+id/titleAchievementTourny"
+        android:layout_marginStart="@dimen/_19sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year Here"
+        android:id="@+id/textAchievementYear"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textAchievementTourny"
+        android:layout_alignStart="@+id/textAchievementTourny" />
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,6 +12,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.ramferno.scoutapplication.ramfernoscout.helpers.DatabaseHelper;
+import org.ramferno.scoutapplication.ramfernoscout.R;
 
 /**
  * A simple {@link Fragment} subclass.

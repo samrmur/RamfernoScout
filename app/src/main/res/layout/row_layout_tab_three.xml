@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tournament Here"
+        android:id="@+id/textTournamentName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year:"
+        android:id="@+id/titleTournamentYear"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textTournamentName"
+        android:layout_alignStart="@+id/textTournamentName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rank:"
+        android:id="@+id/titleTournamentRank"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/titleTournamentYear"
+        android:layout_alignStart="@+id/titleTournamentRecord" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Record:"
+        android:id="@+id/titleTournamentRecord"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/titleTournamentRank"
+        android:layout_alignStart="@+id/titleTournamentYear" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Year Here"
+        android:id="@+id/textTournamentYear"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textTournamentName"
+        android:layout_toEndOf="@+id/titleTournamentRecord"
+        android:layout_marginStart="@dimen/_19sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rank Here"
+        android:id="@+id/textTournamentRank"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textTournamentYear"
+        android:layout_alignStart="@+id/textTournamentYear" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Record Here"
+        android:id="@+id/textTournamentRecord"
+        android:textSize="@dimen/_14sdp"
+        android:layout_below="@+id/textTournamentRank"
+        android:layout_alignStart="@+id/textTournamentRank" />
+</RelativeLayout>

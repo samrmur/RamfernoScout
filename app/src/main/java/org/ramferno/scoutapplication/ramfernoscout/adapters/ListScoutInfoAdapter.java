@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.adapters;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.ramferno.scoutapplication.ramfernoscout.R;
+import org.ramferno.scoutapplication.ramfernoscout.contracts.DatabaseContract;
+import org.ramferno.scoutapplication.ramfernoscout.helpers.DatabaseHelper;
+import org.ramferno.scoutapplication.ramfernoscout.providers.DatabaseProvider;
 
 import java.util.ArrayList;
 import java.util.List;

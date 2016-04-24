@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layoutScout"
-    tools:context="org.ramferno.scoutapplication.ramfernoscout.ScoutFragment">
+    tools:context=".fragments.ScoutFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"

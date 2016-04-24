@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.ramferno.scoutapplication.ramfernoscout.helpers.DatabaseHelperVideo;
+import org.ramferno.scoutapplication.ramfernoscout.R;
 
 /**
  * A simple {@link Fragment} subclass.

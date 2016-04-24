@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.contracts;
 
 public class DatabaseContract {
     public static abstract class NewDataInfo {

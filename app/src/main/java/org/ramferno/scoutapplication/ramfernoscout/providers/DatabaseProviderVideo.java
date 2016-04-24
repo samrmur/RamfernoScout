@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.providers;
 
 public class DatabaseProviderVideo {
     private String videoPath;

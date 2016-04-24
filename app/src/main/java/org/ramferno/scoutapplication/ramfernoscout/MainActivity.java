@@ -1,6 +1,5 @@
 package org.ramferno.scoutapplication.ramfernoscout;
 
-import android.app.FragmentManager;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -13,6 +12,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import org.ramferno.scoutapplication.ramfernoscout.fragments.MatchFragment;
+import org.ramferno.scoutapplication.ramfernoscout.fragments.ScoutFragment;
+import org.ramferno.scoutapplication.ramfernoscout.fragments.TeamInfoFragment;
+import org.ramferno.scoutapplication.ramfernoscout.fragments.VideoFragment;
+import org.ramferno.scoutapplication.ramfernoscout.fragments.WelcomeFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -73,6 +78,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_welcome) {
             //Set the fragment initially
             WelcomeFragment fragment = new WelcomeFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
+            // Handle the camera action
+        }
+        else if (id == R.id.nav_teamInfo) {
+            //Set the fragment initially
+            TeamInfoFragment fragment = new TeamInfoFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragmentTransaction.replace(R.id.fragment_container, fragment);

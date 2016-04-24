@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.providers;
 
 public class DatabaseProvider {
     private String teamNumber;

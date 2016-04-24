@@ -1,4 +1,4 @@
-package org.ramferno.scoutapplication.ramfernoscout;
+package org.ramferno.scoutapplication.ramfernoscout.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.ramferno.scoutapplication.ramfernoscout.R;
+import org.ramferno.scoutapplication.ramfernoscout.contracts.DatabaseContractVideo;
+import org.ramferno.scoutapplication.ramfernoscout.helpers.DatabaseHelperVideo;
+import org.ramferno.scoutapplication.ramfernoscout.providers.DatabaseProviderVideo;
 
 import java.util.ArrayList;
 import java.util.List;

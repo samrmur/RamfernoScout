@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.TeamInfoTabOneFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team 3756 - Ramferno"
+        android:id="@+id/textTeamName"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="&quot;Feel the Heat&quot;"
+        android:id="@+id/textMotto"
+        android:textSize="@dimen/_15sdp"
+        android:textAlignment="center"
+        android:layout_below="@+id/textTeamName"
+        android:layout_centerHorizontal="true" />
+
+    <ViewFlipper
+        android:layout_width="@dimen/_220sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:id="@+id/flipperTeamImages"
+        android:layout_below="@+id/textMotto"
+        android:layout_centerHorizontal="true" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/imageTeamView" />
+    </ViewFlipper>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="From London, Ontario, Canada"
+        android:id="@+id/textCity"
+        android:textSize="@dimen/_10sdp"
+        android:textAlignment="center"
+        android:layout_below="@+id/flipperTeamImages"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARMO Tool/Tool &amp; Cutter &amp; Sir Wilfrid Laurier Secondary School"
+        android:id="@+id/textFullName"
+        android:textSize="@dimen/_10sdp"
+        android:textAlignment="center"
+        android:layout_below="@+id/textCity"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rookie year in 2011"
+        android:id="@+id/textRookieYear"
+        android:textSize="@dimen/_10sdp"
+        android:textAlignment="center"
+        android:layout_below="@+id/textFullName"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="@dimen/_68sdp"
+        android:layout_height="wrap_content"
+        android:text="Website"
+        android:id="@+id/buttonWebsite"
+        android:textColor="#fff"
+        android:background="@color/colorPrimary"
+        android:layout_below="@+id/textRookieYear"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_alignStart="@+id/buttonLikeFB"
+        android:layout_alignEnd="@+id/buttonLikeFB" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonLikeFB"
+        android:background="@drawable/likefacebutton"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/buttonWebsite"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonFollowTwit"
+        android:background="@drawable/twitterfollowbutton"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/buttonLikeFB"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
