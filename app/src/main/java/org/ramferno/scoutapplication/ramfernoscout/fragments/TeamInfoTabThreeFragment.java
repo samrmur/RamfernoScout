@@ -23,12 +23,19 @@ public class TeamInfoTabThreeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates the layout for the fragment
         View view = inflater.inflate(R.layout.fragment_team_info_tab_three, container, false);
 
+        //Gets ListView rows from GetTabThreeResults and adds them to an ArrayList connect to the TeamInfoTabThreeProvider class
         ArrayList<TeamInfoTabThreeProvider> tabThreeResults = GetTabThreeResults();
+
+        //Instantiates ListView and declares xml object for ListView
         final ListView tabThreeListView = (ListView) view.findViewById(R.id.listArchiveTournies);
+
+        //Sets the adapter for the ListView and implements data from the tabThreeResults ArrayList into the adapter
         tabThreeListView.setAdapter(new TabThreeListAdapter(getContext(), tabThreeResults));
 
+        //Returns view
         return view;
     } //End of onCreateVIew
 
@@ -108,6 +115,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info9.setRecord("9-8-0 ");
         results.add(info9);
 
+        //Returns results
         return results;
     } //End of GetTabThreeResults
 } //End of class

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListMatchInfoAdapter extends ArrayAdapter {
+    //Declares Objects
     List list = new ArrayList();
     DatabaseHelperMatch databaseHelperMatch = new DatabaseHelperMatch(getContext());
 
@@ -45,8 +46,12 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
         return list.get(position);
     } //End of getItem
 
+    //Deletes a row of data in the database
     public void deleteRow(String rowId){
+        //Retrieves the database in writable form
         SQLiteDatabase db = databaseHelperMatch.getWritableDatabase();
+
+        //Deletes a row
         db.delete(DatabaseContractMatch.NewDataInfo.TABLE_NAME,
                 DatabaseContractMatch.NewDataInfo.COL_MATCH_NUMBER + "=?",
                 new String[] {String.valueOf(rowId)});
@@ -57,9 +62,16 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
         View row = convertView;
         final LayoutHandler layoutHandler;
         if (row == null){
+            //Declares and instantiates LayoutInflater object
             LayoutInflater layoutInflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            //Inflates row layout with layout inflater
             row = layoutInflater.inflate(R.layout.row_layout_match, parent, false);
+
+            //Instantiates new layout inflater
             layoutHandler = new LayoutHandler();
+
+            //Inflates row with TextView data entered by the user
             layoutHandler.MATCH_NUMBER = (TextView) row.findViewById(R.id.resultNumberMatch);
             layoutHandler.BLUE_TEAM_ONE = (TextView) row.findViewById(R.id.resultBlueTeamOne);
             layoutHandler.BLUE_TEAM_TWO = (TextView) row.findViewById(R.id.resultBlueTeamTwo);
@@ -97,6 +109,7 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
             } //End of onClick
         }); //End of setOnClickListener
 
+        //Returns row
         return row;
     } //End of getView
 } //End of ListMatchInfoAdapter

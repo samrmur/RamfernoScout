@@ -23,12 +23,19 @@ public class TeamInfoTabTwoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates the layout for the fragment
         View view = inflater.inflate(R.layout.fragment_team_info_tab_two, container, false);
 
+        //Gets ListView rows from GetTabTwoResults and adds them to an ArrayList connect to the TeamInfoTabTwoProvider class
         ArrayList<TeamInfoTabTwoProvider> tabTwoResults = GetTabTwoResults();
+
+        //Instantiates ListView and declares xml object for ListView
         final ListView tabTwoListView = (ListView) view.findViewById(R.id.listArchivesAchievements);
+
+        //Sets the adapter for the ListView and implements data from the tabTwoResults ArrayList into the adapter
         tabTwoListView.setAdapter(new TabTwoListAdapter(getContext(), tabTwoResults));
 
+        //Returns view
         return view;
     } //End of onCreateView
 
@@ -71,6 +78,7 @@ public class TeamInfoTabTwoFragment extends Fragment {
         info5.setYear("2011");
         results.add(info5);
 
+        //Returns results
         return results;
     } //End of GetTabTwoResults
 } //End of class

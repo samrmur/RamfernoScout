@@ -21,6 +21,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class MatchFragment extends Fragment {
+    //Android UI & Database objects
     FloatingActionButton addDataMatch;
     ListView eListMatchInfo;
     SQLiteDatabase sqLiteDatabase;
@@ -34,12 +35,25 @@ public class MatchFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates layout for this fragment
         View view = inflater.inflate(R.layout.fragment_match, container, false);
+
+        //Instantiates ListView object with the xml ListView object
         eListMatchInfo = (ListView) view.findViewById(R.id.listMatchInfo);
+
+        //Instantiates ArrayAdapter with Application Context and inflates with row layout
         listMatchInfoAdapter = new ListMatchInfoAdapter(getActivity().getApplicationContext(), R.layout.row_layout_match);
+
+        //Sets adapter for the ListView
         eListMatchInfo.setAdapter(listMatchInfoAdapter);
+
+        //Instantiates Database Helper with Application Context
         databaseHelperMatch = new DatabaseHelperMatch(getActivity().getApplicationContext());
+
+        //Gets readable database through Database Helper
         sqLiteDatabase = databaseHelperMatch.getReadableDatabase();
+
+        //Gets information from Database Helper and adds it to cursor
         cursor = databaseHelperMatch.getInformation(sqLiteDatabase);
 
         //Checks if information is available in cursor
@@ -69,17 +83,30 @@ public class MatchFragment extends Fragment {
             } while (cursor.moveToNext());
         } //End of if statement
 
-        //Setups Floating Action Button
+        //Instantiates  Floating Action Button with corresponding xml object
         addDataMatch = (FloatingActionButton) view.findViewById(R.id.fabMatch);
+
+        //Creates event on button click
         addDataMatch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //Declares and instantiates fragment
                 AddMatchDataFragment fragment = new AddMatchDataFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+
+                //Replaces original fragment with new fragment
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
+
+        //Returns view
         return view;
     } //End of onCreateView
 } //End of class

@@ -75,6 +75,7 @@ public class AddMatchDataFragment extends Fragment {
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
+
         //Returns view
         return view;
     } //End of onCreateView
@@ -91,11 +92,15 @@ public class AddMatchDataFragment extends Fragment {
         String sBlueScore = tBlueScore.getText().toString();
         String sRedScore = tRedScore.getText().toString();
 
-        //Saves data
+        //Saves data to database
         sqLiteDatabase = myDB.getWritableDatabase();
         myDB.addInformation(sMatchNumber, sBlueTeamOne, sBlueTeamTwo, sBlueTeamThree, sRedTeamOne, sRedTeamTwo, sRedTeamThree, sBlueScore,
                 sRedScore, sqLiteDatabase);
+
+        //Creates message on screen that indicates the data has been saved
         Toast.makeText(getContext(), "Data Saved", Toast.LENGTH_LONG).show();
+
+        //Closes the database
         myDB.close();
     } //End of addScoutInfo
 } //End of class

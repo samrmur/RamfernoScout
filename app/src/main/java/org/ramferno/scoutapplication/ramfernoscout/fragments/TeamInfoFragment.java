@@ -15,6 +15,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class TeamInfoFragment extends Fragment {
+    //Android UI objects
     TabLayout tabLayout;
     ViewPager viewPager;
     InfoPagerAdapter infoPagerAdapter;
@@ -38,10 +39,13 @@ public class TeamInfoFragment extends Fragment {
         infoPagerAdapter.addFragments(new TeamInfoTabTwoFragment(), "Achievements");
         infoPagerAdapter.addFragments(new TeamInfoTabThreeFragment(), "Past Tournaments");
 
-        //Sets adapter for viewPager then sets the same view pager for tabLayout
+        //Sets adapter for viewPager
         viewPager.setAdapter(infoPagerAdapter);
+
+        //Sets up Tab Layout with View Pager
         tabLayout.setupWithViewPager(viewPager);
 
+        //Returns view
         return view;
     } //End of onCreateView
 } //End of class

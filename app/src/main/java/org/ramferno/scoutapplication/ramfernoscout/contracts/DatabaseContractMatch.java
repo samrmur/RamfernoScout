@@ -2,7 +2,10 @@ package org.ramferno.scoutapplication.ramfernoscout.contracts;
 
 public class DatabaseContractMatch {
     public static abstract class NewDataInfo {
+        //Declares and initializes table name for database
         public static final String TABLE_NAME = "match_table";
+
+        //Declares and initializes variables for the table
         public static final String COL_MATCH_NUMBER = "MATCH_NUMBER";
         public static final String COL_BLUE_TEAM_ONE = "BLUE_TEAM_ONE";
         public static final String COL_BLUE_TEAM_TWO = "BLUE_TEAM_TWO";

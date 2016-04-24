@@ -20,7 +20,7 @@ import org.ramferno.scoutapplication.ramfernoscout.fragments.VideoFragment;
 import org.ramferno.scoutapplication.ramfernoscout.fragments.WelcomeFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+    //Declares Android UI objects
     NavigationView navigationView = null;
     Toolbar toolbar = null;
 
@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Set the fragment initially
         WelcomeFragment fragment = new WelcomeFragment();
-        android.support.v4.app.FragmentTransaction fragmentTransaction =
-                getSupportFragmentManager().beginTransaction();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 

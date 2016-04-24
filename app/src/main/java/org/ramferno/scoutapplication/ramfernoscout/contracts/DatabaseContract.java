@@ -2,7 +2,10 @@ package org.ramferno.scoutapplication.ramfernoscout.contracts;
 
 public class DatabaseContract {
     public static abstract class NewDataInfo {
+        //Declares and initializes table name for database
         public static final String TABLE_NAME = "scout_table";
+
+        //Declares and initializes variables for the table
         public static final String COL_NUMBER = "TEAM_NUMBER";
         public static final String COL_PORTCULLIS = "PORTCULLIS";
         public static final String COL_CHEVAL_FRISE = "CHEVAL_DE_FRISE";

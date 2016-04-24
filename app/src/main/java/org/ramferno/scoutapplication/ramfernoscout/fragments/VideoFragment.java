@@ -21,6 +21,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class VideoFragment extends Fragment {
+    //Android UI & Database objects
     FloatingActionButton addVideoScout;
     ListView eListVideoInfo;
     SQLiteDatabase sqLiteDatabase;
@@ -34,6 +35,7 @@ public class VideoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates
         View view = inflater.inflate(R.layout.fragment_video, container, false);
         eListVideoInfo = (ListView) view.findViewById(R.id.listVideoInfo);
         listVideoInfoAdapter = new ListVideoInfoAdapter(getActivity().getApplicationContext(), R.layout.row_layout_video);

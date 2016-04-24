@@ -17,7 +17,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class TeamInfoTabOneFragment extends Fragment {
-   //Declares objects
+   //Declares Android UI objects
     ViewFlipper viewFlipper;
     Button openWebsite, likeFB, followTwit;
 

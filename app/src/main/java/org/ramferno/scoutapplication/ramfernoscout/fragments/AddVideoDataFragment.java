@@ -22,7 +22,10 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class AddVideoDataFragment extends Fragment {
+    //Video variables
     private int REQUEST_CODE = 0;
+
+    //Android UI, database objects
     Button btnRecordVideo, btnSaveVideo, btnCancelVideo;
     DatabaseHelperVideo myDB;
     EditText tTeam;
@@ -35,52 +38,80 @@ public class AddVideoDataFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates the layout for the fragment
         View view = inflater.inflate(R.layout.fragment_add_video_data, container, false);
 
         //Starts database
         myDB = new DatabaseHelperVideo(getActivity());
 
-        //Instantiate all editText objects
+        //Instantiate editText object
         tTeam = (EditText) view.findViewById(R.id.editTeamRecorded);
 
-        //Records Video
+        //Instantiates record button with xml object
         btnRecordVideo = (Button) view.findViewById(R.id.buttonRecordVideo);
+
+        //Creates event on button click
         btnRecordVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Declares and instantiates Intent object
                 Intent callVideoAppIntent = new Intent();
+
+                //Sets Video Capture action for intent
                 callVideoAppIntent.setAction(MediaStore.ACTION_VIDEO_CAPTURE);
+
+                //Starts default video capture program on device
                 startActivityForResult(callVideoAppIntent, REQUEST_CODE);
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Saves Video path and data
+        //Instantiates save button with corresponding xml object
         btnSaveVideo = (Button) view.findViewById(R.id.buttonSaveVideo);
+
+        //Creates event on button click
         btnSaveVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Saves data to database
+                //Calls method on button click
                 addVideoInfo();
 
-                //Returns to VideoFragment
+                //Declares and instantiates VideoFragment
                 VideoFragment fragment = new VideoFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+
+                //Replaces original fragment with new fragment
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Cancels all data and recordings
+        //Instantiates cancel button with corresponding xml object
         btnCancelVideo = (Button) view.findViewById(R.id.buttonCancelVideo);
+
+        //Creates event on button click
         btnCancelVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Returns to VideoFragment
+                //Declares and instantiates VideoFragment
                 VideoFragment fragment = new VideoFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+
+                //Begins transaction between one fragment to another
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
@@ -92,16 +123,24 @@ public class AddVideoDataFragment extends Fragment {
         //Converts editText values into strings
         String sTeam = tTeam.getText().toString();
 
-        //Saves data
+        //Saves data to database
         sqLiteDatabase = myDB.getWritableDatabase();
         myDB.addInformation(sVideoPath, sTeam, sqLiteDatabase);
+
+        //Creates message on screen that indicates the data has been saved
         Toast.makeText(getContext(), "Data Saved", Toast.LENGTH_LONG).show();
+
+        //Closes the database
         myDB.close();
     } //End of addScoutInfo
 
+    //Creates event for what happens after a video is taken or not
     public void onActivityResult (int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            //Gets data from Uri object
             Uri videoUri = data.getData();
+
+            //Converts Uri to string value then stores it in a string
             sVideoPath = videoUri.toString();
         } //End of if statement
     } //End of onActivityResult

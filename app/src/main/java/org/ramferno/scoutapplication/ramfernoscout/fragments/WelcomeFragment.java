@@ -1,7 +1,5 @@
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
-
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.ramferno.scoutapplication.ramfernoscout.R;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,9 +18,10 @@ public class WelcomeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
 
-        // Inflate the layout for this fragment
+        //Returns rootView
         return rootView;
     } //End of onCreateView
 } //End of class

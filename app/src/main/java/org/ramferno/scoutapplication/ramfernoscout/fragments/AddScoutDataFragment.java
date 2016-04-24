@@ -261,11 +261,15 @@ public class AddScoutDataFragment extends Fragment {
         String sTelePlay = tTelePlay.getText().toString();
         String sHang = fHang;
 
-        //Saves data
+        //Saves data to database
         sqLiteDatabase = myDB.getWritableDatabase();
         myDB.addInformation(sNumber, sPortcullis, sChevalFrise, sMoat, sRamparts, sDrawbridge, sSallyPort, sRockWall,
                 sRockTerrain, sLowBar, sAutoHigh, sAutoLow, sTeleHigh, sTeleLow, sTelePlay, sHang, sqLiteDatabase);
+
+        //Creates message on screen that indicates the data has been saved
         Toast.makeText(getContext(), "Data Saved", Toast.LENGTH_LONG).show();
+
+        //Closes the database
         myDB.close();
     } //End of addScoutInfo
 } //End of class

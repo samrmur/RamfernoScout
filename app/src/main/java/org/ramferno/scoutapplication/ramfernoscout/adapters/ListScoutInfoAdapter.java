@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListScoutInfoAdapter extends ArrayAdapter {
-
+    //Declares and instantiates objects
     List list = new ArrayList();
     DatabaseHelper databaseHelper = new DatabaseHelper(getContext());
 
