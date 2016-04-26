@@ -53,8 +53,8 @@ public class TeamInfoTabOneFragment extends Fragment {
         viewFlipper.setInAnimation(getContext(), R.anim.fade_in);
         viewFlipper.setOutAnimation(getContext(), R.anim.fade_out);
 
-        //Switches images every 5 seconds
-        viewFlipper.setFlipInterval(5000);
+        //Switches images every 2 seconds
+        viewFlipper.setFlipInterval(2000);
 
         //Starts flipping the ViewFlipper
         viewFlipper.startFlipping();

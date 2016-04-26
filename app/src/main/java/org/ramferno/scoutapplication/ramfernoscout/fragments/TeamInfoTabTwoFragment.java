@@ -41,6 +41,7 @@ public class TeamInfoTabTwoFragment extends Fragment {
 
     //Programmatically adds data to ListView without user assistance
     private ArrayList<TeamInfoTabTwoProvider> GetTabTwoResults() {
+        //Declares and instantiates object
         ArrayList<TeamInfoTabTwoProvider> results = new ArrayList<TeamInfoTabTwoProvider>();
 
         //Adds first row of data

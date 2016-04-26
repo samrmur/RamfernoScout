@@ -22,10 +22,10 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class AddVideoDataFragment extends Fragment {
-    //Video variables
+    //Declares and initializes video variable
     private int REQUEST_CODE = 0;
 
-    //Android UI, database objects
+    //Declares Android UI & database objects
     Button btnRecordVideo, btnSaveVideo, btnCancelVideo;
     DatabaseHelperVideo myDB;
     EditText tTeam;

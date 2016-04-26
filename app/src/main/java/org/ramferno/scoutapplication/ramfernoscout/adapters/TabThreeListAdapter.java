@@ -13,53 +13,67 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.TeamInfoTabThreePro
 import java.util.ArrayList;
 
 public class TabThreeListAdapter extends BaseAdapter {
-        private static ArrayList<TeamInfoTabThreeProvider> tabThreeArrayList;
+    //Declares objects
+    private static ArrayList<TeamInfoTabThreeProvider> tabThreeArrayList;
+    private LayoutInflater mInflater;
 
-        private LayoutInflater mInflater;
+    public TabThreeListAdapter(Context context, ArrayList<TeamInfoTabThreeProvider> results) {
+        //Instantiates objects
+        tabThreeArrayList = results;
+        mInflater = LayoutInflater.from(context);
+    } //End of TabThreeListAdapter
 
-        public TabThreeListAdapter(Context context, ArrayList<TeamInfoTabThreeProvider> results) {
-            tabThreeArrayList = results;
-            mInflater = LayoutInflater.from(context);
-        } //End of TabThreeListAdapter
-
-        public int getCount() {
+    public int getCount() {
             return tabThreeArrayList.size();
         } //End of getItem
 
-        public Object getItem(int position) {
-            return tabThreeArrayList.get(position);
-        } //End of getItem
+    public Object getItem(int position) {
+        return tabThreeArrayList.get(position);
+    } //End of getItem
 
-        public long getItemId(int position) {
+    public long getItemId(int position) {
             return position;
         } //End of getItemId
 
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder holder;
-            if (convertView == null) {
-                convertView = mInflater.inflate(R.layout.row_layout_tab_three, null);
-                holder = new ViewHolder();
-                holder.txtTournamentName = (TextView) convertView.findViewById(R.id.textTournamentName);
-                holder.txtYear = (TextView) convertView.findViewById(R.id.textTournamentYear);
-                holder.txtRank = (TextView) convertView.findViewById(R.id.textTournamentRank);
-                holder.txtRecord = (TextView) convertView.findViewById(R.id.textTournamentRecord);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        //Declares ViewHolder object
+        ViewHolder holder;
 
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            } //End of if statement
-            holder.txtTournamentName.setText(tabThreeArrayList.get(position).getTournamentName());
-            holder.txtYear.setText(tabThreeArrayList.get(position).getYear());
-            holder.txtRank.setText(tabThreeArrayList.get(position).getRank());
-            holder.txtRecord.setText(tabThreeArrayList.get(position).getRecord());
+        //Checks if convertView is empty or not
+        if (convertView == null) {
+            //Inflates convertView with corresponding row layout
+            convertView = mInflater.inflate(R.layout.row_layout_tab_three, null);
 
-            return convertView;
-        } //End of getView
+            //Instantiates ViewHolder object
+            holder = new ViewHolder();
 
-        static class ViewHolder {
-            TextView txtTournamentName;
-            TextView txtYear;
-            TextView txtRank;
-            TextView txtRecord;
-        } //End of ViewHolder
+            //Instantiates TextView objects from ViewHolder with corresponding xml objects
+            holder.txtTournamentName = (TextView) convertView.findViewById(R.id.textTournamentName);
+            holder.txtYear = (TextView) convertView.findViewById(R.id.textTournamentYear);
+            holder.txtRank = (TextView) convertView.findViewById(R.id.textTournamentRank);
+            holder.txtRecord = (TextView) convertView.findViewById(R.id.textTournamentRecord);
+
+            //Sets tag for convertView to remember
+            convertView.setTag(holder);
+        } else {
+            //Gets the tag for the VIewHolder object that convertView has remembered
+            holder = (ViewHolder) convertView.getTag();
+        } //End of if statement
+        //Sets text values for TextView objects by getting values from ArrayList in TabInfoThreeProvider
+        holder.txtTournamentName.setText(tabThreeArrayList.get(position).getTournamentName());
+        holder.txtYear.setText(tabThreeArrayList.get(position).getYear());
+        holder.txtRank.setText(tabThreeArrayList.get(position).getRank());
+        holder.txtRecord.setText(tabThreeArrayList.get(position).getRecord());
+
+        //Returns convertView
+        return convertView;
+    } //End of getView
+
+    static class ViewHolder {
+        //Declares TextView objects
+        TextView txtTournamentName;
+        TextView txtYear;
+        TextView txtRank;
+        TextView txtRecord;
+    } //End of ViewHolder
 } //End of class

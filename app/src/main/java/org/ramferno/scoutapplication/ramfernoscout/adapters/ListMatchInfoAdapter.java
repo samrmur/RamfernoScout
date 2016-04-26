@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListMatchInfoAdapter extends ArrayAdapter {
-    //Declares Objects
+    //Declares and instantiates objects
     List list = new ArrayList();
     DatabaseHelperMatch databaseHelperMatch = new DatabaseHelperMatch(getContext());
 
@@ -94,6 +94,8 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
             layoutHandler = (LayoutHandler) row.getTag();
         } //End of if statement
         final DatabaseProviderMatch databaseProviderMatch = (DatabaseProviderMatch) this.getItem(position);
+
+        //Sets the text of the layout handler strings through the database provider
         layoutHandler.MATCH_NUMBER.setText(databaseProviderMatch.getMatchNumber());
         layoutHandler.BLUE_TEAM_ONE.setText(databaseProviderMatch.getBlueTeamOne());
         layoutHandler.BLUE_TEAM_TWO.setText(databaseProviderMatch.getBlueTeamTwo());
