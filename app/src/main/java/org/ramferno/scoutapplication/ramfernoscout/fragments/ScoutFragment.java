@@ -21,7 +21,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class ScoutFragment extends Fragment {
-    //Android UI & Database objects
+    //Declares Android UI & Database objects
     FloatingActionButton addDataScout;
     ListView eListScoutInfo;
     SQLiteDatabase sqLiteDatabase;

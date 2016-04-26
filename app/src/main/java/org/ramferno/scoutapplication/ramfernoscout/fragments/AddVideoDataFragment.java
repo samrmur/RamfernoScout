@@ -116,6 +116,7 @@ public class AddVideoDataFragment extends Fragment {
             } //End of onClick
         }); //End of setOnClickListener
 
+        //Returns view
         return view;
     } //End of onCreateView
 

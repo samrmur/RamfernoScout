@@ -27,6 +27,7 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
     } //End of ListDataScoutInfoAdapter
 
     static class LayoutHandler {
+        //Declares all TextView objects
         TextView TEAM_NUMBER, PORTCULLIS, CHEVAL_FRISE, MOAT, RAMPARTS, DRAWBRIDGE, SALLY_PORT, ROCK_WALL, ROCK_TERRAIN, LOW_BAR, AUTO_HIGH, AUTO_LOW,
                 TELE_HIGH, TELE_LOW, TELE_PLAY, HANG;
     } //End of LayoutHandler
@@ -47,8 +48,12 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
         return list.get(position);
     } //End of getItem
 
+    //Deletes a row of data in the database
     public void deleteRow(String rowId){
+        //Retrieves the database in writable form
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
+
+        //Deletes a row
         db.delete(DatabaseContract.NewDataInfo.TABLE_NAME,
                 DatabaseContract.NewDataInfo.COL_NUMBER + "=?",
                 new String[] {String.valueOf(rowId)});
@@ -56,12 +61,22 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        //Declares Android objects
         View row = convertView;
         final LayoutHandler layoutHandler;
+
+        //Checks to see if row is empty
         if (row == null){
+            //Declares and instantiates LayoutInflater object
             LayoutInflater layoutInflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            //Inflates the row view with the row layout using the layout inflater
             row = layoutInflater.inflate(R.layout.row_layout, parent, false);
+
+            //Instantiates layout handler
             layoutHandler = new LayoutHandler();
+
+            //Inflates row with TextView data entered by the user
             layoutHandler.TEAM_NUMBER = (TextView) row.findViewById(R.id.resultTeamNumber);
             layoutHandler.PORTCULLIS = (TextView) row.findViewById(R.id.resultPortcullis);
             layoutHandler.CHEVAL_FRISE = (TextView) row.findViewById(R.id.resultChevalFrise);
@@ -78,12 +93,17 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
             layoutHandler.TELE_LOW = (TextView) row.findViewById(R.id.resultLowGoal);
             layoutHandler.TELE_PLAY = (TextView) row.findViewById(R.id.resultOffDef);
             layoutHandler.HANG = (TextView) row.findViewById(R.id.resultHang);
+
+            //Sets layout handler tag on row so that row can remember the data inserted by the user
             row.setTag(layoutHandler);
         }
         else {
+            //Gets tag from row and implements it into the layout handler if row has data
             layoutHandler = (LayoutHandler) row.getTag();
         } //End of if statement
         final DatabaseProvider databaseProvider = (DatabaseProvider) this.getItem(position);
+
+        //Sets the text of the layout handler strings through the database provider
         layoutHandler.TEAM_NUMBER.setText(databaseProvider.getTeamNumber());
         layoutHandler.PORTCULLIS.setText(databaseProvider.getPortcullis());
         layoutHandler.CHEVAL_FRISE.setText(databaseProvider.getChevalFrise());
@@ -101,9 +121,13 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
         layoutHandler.TELE_PLAY.setText(databaseProvider.getTelePlay());
         layoutHandler.HANG.setText(databaseProvider.getHang());
 
-        //Deletes ListView row
+        //Declares and instantiates delete button
         Button deleteBtn = (Button) row.findViewById(R.id.buttonDelete);
+
+        //Adds TeamNumber tag to the button to enable the row to be deleted
         deleteBtn.setTag(databaseProvider.getTeamNumber());
+
+        //Creates event on button click
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,6 +137,7 @@ public class ListScoutInfoAdapter extends ArrayAdapter {
             } //End of onClick
         }); //End of setOnClickListener
 
+        //Returns row
         return row;
     } //End of getView
 } //End of class

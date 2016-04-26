@@ -18,7 +18,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class AddMatchDataFragment extends Fragment {
-    //Android UI & Database objects
+    //Declares Android UI & Database objects
     Button cancelButtonMatch;
     Button addMatchButton;
     DatabaseHelperMatch myDB;
@@ -31,12 +31,13 @@ public class AddMatchDataFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates the layout for the fragment
         View view = inflater.inflate(R.layout.fragment_add_match_data, container, false);
 
         //Starts database
         myDB = new DatabaseHelperMatch(getActivity());
 
-        //Instantiate all editText objects
+        //Instantiates all editText objects
         tMatchNumber = (EditText) view.findViewById(R.id.editNumberMatch);
         tBlueTeamOne = (EditText) view.findViewById(R.id.editBlueOne);
         tBlueTeamTwo = (EditText) view.findViewById(R.id.editBlueTwo);
@@ -47,31 +48,51 @@ public class AddMatchDataFragment extends Fragment {
         tBlueScore = (EditText) view.findViewById(R.id.editBlueScore);
         tRedScore = (EditText) view.findViewById(R.id.editRedScore);
 
-        //Adds data to MatchFragment
+        //Instantiates add match data button with corresponding xml object
         addMatchButton = (Button) view.findViewById(R.id.buttonAddDataMatch);
+
+        //Event created on button click that adds data to database and returns to MatchFragment
         addMatchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Saves data to database
+                //Calls method on button click
                 addMatchInfo();
 
-                //Returns to MatchFragment
+                //Declares and instantiates MatchFragment
                 MatchFragment fragment = new MatchFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+
+                //Replaces original fragment with new fragment
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Returns to MatchFragment without adding any data
+        //Instantiates cancel match data button with corresponding xml object
         cancelButtonMatch = (Button) view.findViewById(R.id.buttonCancelMatch);
+
+        //Event created on button click that cancels any data entered and returns to MatchFragment
         cancelButtonMatch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Returns to MatchFragment
+                //Declares and instantiates MatchFragment
                 MatchFragment fragment = new MatchFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+
+                //Replaces original fragment with new fragment
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
@@ -80,6 +101,7 @@ public class AddMatchDataFragment extends Fragment {
         return view;
     } //End of onCreateView
 
+    //Method that gets data from EditText values, converts those values to strings and saves the data to the database
     public void addMatchInfo() {
         //Converts all editText values into strings
         String sMatchNumber = tMatchNumber.getText().toString();

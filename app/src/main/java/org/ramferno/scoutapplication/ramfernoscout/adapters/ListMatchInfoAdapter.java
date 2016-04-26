@@ -27,6 +27,7 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
     } //End of ListDataScoutInfoAdapter
 
     static class LayoutHandler {
+        //Declares all TextView objects
         TextView MATCH_NUMBER, BLUE_TEAM_ONE, BLUE_TEAM_TWO, BLUE_TEAM_THREE, RED_TEAM_ONE, RED_TEAM_TWO, RED_TEAM_THREE, BLUE_SCORE, RED_SCORE;
     } //End of LayoutHandler
 
@@ -59,16 +60,19 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        //Declares Android objects
         View row = convertView;
         final LayoutHandler layoutHandler;
+
+        //Checks to see if row is empty
         if (row == null){
             //Declares and instantiates LayoutInflater object
             LayoutInflater layoutInflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            //Inflates row layout with layout inflater
+            //Inflates the row view with the row layout using the layout inflater
             row = layoutInflater.inflate(R.layout.row_layout_match, parent, false);
 
-            //Instantiates new layout inflater
+            //Instantiates layout handler
             layoutHandler = new LayoutHandler();
 
             //Inflates row with TextView data entered by the user
@@ -81,9 +85,12 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
             layoutHandler.RED_TEAM_THREE = (TextView) row.findViewById(R.id.resultRedTeamThree);
             layoutHandler.BLUE_SCORE = (TextView) row.findViewById(R.id.resultBlueScore);
             layoutHandler.RED_SCORE = (TextView) row.findViewById(R.id.resultRedScore);
+
+            //Sets layout handler tag on row so that row can remember the data inserted by the user
             row.setTag(layoutHandler);
         }
         else {
+            //Gets tag from row and implements it into the layout handler if row has data
             layoutHandler = (LayoutHandler) row.getTag();
         } //End of if statement
         final DatabaseProviderMatch databaseProviderMatch = (DatabaseProviderMatch) this.getItem(position);
@@ -97,9 +104,13 @@ public class ListMatchInfoAdapter extends ArrayAdapter {
         layoutHandler.BLUE_SCORE.setText(databaseProviderMatch.getBlueScore());
         layoutHandler.RED_SCORE.setText(databaseProviderMatch.getRedScore());
 
-        //Deletes ListView row
+        //Declares and instantiates delete button
         Button deleteBtn = (Button) row.findViewById(R.id.buttonDeleteMatch);
+
+        //Adds TeamNumber tag to the button to enable the row to be deleted
         deleteBtn.setTag(databaseProviderMatch.getMatchNumber());
+
+        //Creates event on button click
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

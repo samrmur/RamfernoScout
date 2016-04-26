@@ -20,7 +20,7 @@ import org.ramferno.scoutapplication.ramfernoscout.R;
  * A simple {@link Fragment} subclass.
  */
 public class AddScoutDataFragment extends Fragment {
-    //Android UI & Database objects
+    //Declares Android UI & Database objects
     Button cancelButton;
     Button addDataButton;
     DatabaseHelper myDB;
@@ -28,6 +28,8 @@ public class AddScoutDataFragment extends Fragment {
     CheckBox tPortcullis, tChevalFrise, tMoat, tRamparts, tDrawbridge, tSallyPort, tRockWall, tRockTerrain, tLowBar, tAutoHigh, tAutoLow,
             tTeleHigh, tTeleLow, tHang;
     SQLiteDatabase sqLiteDatabase;
+
+    //Declares primary string variables
     String fPorticullis, fChevalFrise, fMoat, fRamparts, fDrawbridge, fSallyPort, fRockWall, fRockTerrain, fLowBar, fAutoHigh, fAutoLow,
             fTeleHigh, fTeleLow, fHang;
 
@@ -37,12 +39,13 @@ public class AddScoutDataFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflates the layout for the fragment
         View view = inflater.inflate(R.layout.fragment_add_scout_data, container, false);
 
         //Starts database
         myDB = new DatabaseHelper(getActivity());
 
-        //Sets default value of Strings
+        //Sets default value of primary strings
         fPorticullis = "No";
         fChevalFrise = "No";
         fMoat = "No";
@@ -82,9 +85,6 @@ public class AddScoutDataFragment extends Fragment {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)  {
                 if(tPortcullis.isChecked()) {
                     fPorticullis = "Yes";
-                }
-                else {
-                    fPorticullis = "No";
                 } //End of if statement
             } //End of onClick
         }); //End of onClickListener
@@ -209,31 +209,51 @@ public class AddScoutDataFragment extends Fragment {
             } //End of onClick
         }); //End of onClickListener
 
-        //Adds data to ScoutFragment
+        //Instantiates add scout data button with corresponding xml object
         addDataButton = (Button) view.findViewById(R.id.buttonDataAdd);
+
+        //Event created on button click that adds data to database and returns to ScoutFragment
         addDataButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Saves data to database
+                //Calls method on button click
                 addScoutInfo();
 
-                //Returns to ScoutFragment
+                //Declares and instantiates ScoutFragment
                 ScoutFragment fragment = new ScoutFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+
+                //Replaces original fragment with new fragment
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
 
         //Returns to ScoutFragment without adding any data
         cancelButton = (Button) view.findViewById(R.id.buttonCancel);
+
+        //Event created on button click that cancels any data entered and returns to ScoutFragment
         cancelButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Returns to ScoutFragment
+                //Declares and instantiates ScoutFragment
                 ScoutFragment fragment = new ScoutFragment();
+
+                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                //Gets custom created animations and uses them during transactions
                 fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left);
+
+                //Replaces original fragment with new fragment
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
+
+                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
@@ -242,8 +262,9 @@ public class AddScoutDataFragment extends Fragment {
         return view;
     } //End of onCreateView
 
+    //Method that gets data from primary strings and stores them into data strings and saves the data in the data strings into the database
     public void addScoutInfo() {
-        //Converts all editText values into strings
+        //Stores primary strings into data strings
         String sNumber = tNumber.getText().toString();;
         String sPortcullis = fPorticullis;
         String sChevalFrise = fChevalFrise;
