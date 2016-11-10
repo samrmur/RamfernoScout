@@ -66,7 +66,7 @@ public class VideoFragment extends Fragment {
                 videoPath = cursor.getString(cursor.getColumnIndex(DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH));
                 team =  cursor.getString(cursor.getColumnIndex(DatabaseContractVideo.NewDataInfo.COL_TEAM));
 
-                //Get methods from DatabaseProvider
+                //Get methods from DatabaseProviderVideo
                 DatabaseProviderVideo databaseProviderVideo = new DatabaseProviderVideo(videoPath, team);
 
                 //Pass objects to add method

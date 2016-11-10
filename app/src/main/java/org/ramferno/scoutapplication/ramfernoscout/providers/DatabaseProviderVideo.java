@@ -23,5 +23,5 @@ public class DatabaseProviderVideo {
     public DatabaseProviderVideo(String videoPath, String team) {
         this.videoPath = videoPath;
         this.team = team;
-    } //End of DatabaseProviderMatch
-} //End of DatabaseProviderVideo
+    } //End of DatabaseProviderVideo
+} //End of class

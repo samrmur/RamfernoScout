@@ -1,7 +1,20 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: ScoutProvider
+ * LAST EDITED: November 5th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class will generate all getters and setters for all variables where values will be set
+ * to them then later on retrieved to be displayed in a ListView.
+ */
+
+//Declare package
 package org.ramferno.scoutapplication.ramfernoscout.providers;
 
-public class DatabaseProvider {
-    private String teamNumber;
+//Start of ScoutProvider
+public class ScoutProvider {
+    //Declare and initialize variables
+    private int id;
+    private int teamNumber;
     private String portcullis;
     private String chevalFrise;
     private String moat;
@@ -18,11 +31,20 @@ public class DatabaseProvider {
     private String telePlay;
     private String hang;
 
-    public String getTeamNumber() {
+    //Generate all getters and setters for all available variables
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTeamNumber() {
         return teamNumber;
     }
 
-    public void setTeamNumber(String teamNumber) {
+    public void setTeamNumber(int teamNumber) {
         this.teamNumber = teamNumber;
     }
 
@@ -145,26 +167,4 @@ public class DatabaseProvider {
     public void setHang(String hang) {
         this.hang = hang;
     }
-
-    public DatabaseProvider(String teamNumber, String portcullis, String chevalFrise, String moat, String ramparts,
-                            String drawbridge, String sallyPort, String rockWall, String rockTerrain, String lowBar,
-                            String autoHigh, String autoLow, String teleHigh, String teleLow, String telePlay,
-                            String hang) {
-        this.teamNumber = teamNumber;
-        this.portcullis = portcullis;
-        this.chevalFrise = chevalFrise;
-        this.moat = moat;
-        this.ramparts = ramparts;
-        this.drawbridge = drawbridge;
-        this.sallyPort = sallyPort;
-        this.rockWall = rockWall;
-        this.rockTerrain = rockTerrain;
-        this.lowBar = lowBar;
-        this.autoHigh = autoHigh;
-        this.autoLow = autoLow;
-        this.teleHigh = teleHigh;
-        this.teleLow = teleLow;
-        this.telePlay = telePlay;
-        this.hang = hang;
-    } //End of DatabaseProvider
-} //End of DatabaseProvider
+} //End of class

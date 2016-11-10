@@ -1,8 +1,21 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: MainActivity
+ * LAST EDITED: November 5th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class is the main function of the application. It contains the navigation menu
+ * instructions that is used to switch between the main fragments of the application.
+ */
+
+//Declare package and import classes
 package org.ramferno.scoutapplication.ramfernoscout;
 
+import android.app.FragmentManager;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,13 +26,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.ramferno.scoutapplication.ramfernoscout.fragments.AddressDialogFragment;
 import org.ramferno.scoutapplication.ramfernoscout.fragments.MatchFragment;
 import org.ramferno.scoutapplication.ramfernoscout.fragments.ScoutFragment;
 import org.ramferno.scoutapplication.ramfernoscout.fragments.TeamInfoFragment;
 import org.ramferno.scoutapplication.ramfernoscout.fragments.VideoFragment;
 import org.ramferno.scoutapplication.ramfernoscout.fragments.WelcomeFragment;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+//Start of MainActivity
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
     //Declares Android UI objects
     NavigationView navigationView = null;
     Toolbar toolbar = null;
@@ -32,9 +48,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //Disables Orientation throughout the entire application
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        //Sets the fragment initially
+        //Opens initial fragment
         WelcomeFragment fragment = new WelcomeFragment();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        android.support.v4.app.FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 
@@ -50,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
-        //How to change elements in the header programmatically
+        //Change elements in the header programmatically
         View headerView = navigationView.getHeaderView(0);
         TextView emailText = (TextView) headerView.findViewById(R.id.description);
         emailText.setText("Scouting Application");
@@ -71,54 +88,74 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+        //Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        //Switch to fragment on item select
         if (id == R.id.nav_welcome) {
-            //Set the fragment initially
             WelcomeFragment fragment = new WelcomeFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-            // Handle the camera action
         }
         else if (id == R.id.nav_teamInfo) {
-            //Set the fragment initially
             TeamInfoFragment fragment = new TeamInfoFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-            // Handle the camera action
         }
         else if (id == R.id.nav_scout) {
-            //Set the fragment initially
             ScoutFragment fragment = new ScoutFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
         }
         else if (id == R.id.nav_match) {
-            //Set the fragment initially
             MatchFragment fragment = new MatchFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
         }
         else if (id == R.id.nav_video) {
-            //Set the fragment initially
             VideoFragment fragment = new VideoFragment();
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             fragmentTransaction.setCustomAnimations(R.anim.fade_in,R.anim.fade_out);
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        }
+        } //End of if statement
 
+        //Close Drawer after use
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     } //End of onNavigationItemSelected
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    } //End of onCreateOptionMenu
+
+    @Override
+    public boolean onOptionsItemSelected(final MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                FragmentManager fm = getFragmentManager();
+                AddressDialogFragment dialogFragment = new AddressDialogFragment();
+                dialogFragment.show(fm, "Sample Fragment");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 } //End of class

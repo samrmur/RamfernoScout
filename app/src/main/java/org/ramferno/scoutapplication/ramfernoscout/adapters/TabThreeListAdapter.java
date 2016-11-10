@@ -59,6 +59,7 @@ public class TabThreeListAdapter extends BaseAdapter {
             //Gets the tag for the VIewHolder object that convertView has remembered
             holder = (ViewHolder) convertView.getTag();
         } //End of if statement
+
         //Sets text values for TextView objects by getting values from ArrayList in TabInfoThreeProvider
         holder.txtTournamentName.setText(tabThreeArrayList.get(position).getTournamentName());
         holder.txtYear.setText(tabThreeArrayList.get(position).getYear());

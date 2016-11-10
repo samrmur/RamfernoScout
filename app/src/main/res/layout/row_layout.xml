@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/resultTeamNumber"
         android:text="Here Number"
-        android:textSize="18dp"
+        android:textSize="@dimen/_14sdp"
         android:textColor="#444040"
         android:textStyle="bold"
         android:layout_alignParentTop="true"
@@ -270,7 +270,8 @@
         android:id="@+id/textTitleTeleoperated"
         android:textStyle="bold|italic"
         android:layout_above="@+id/textHighGoal"
-        android:layout_alignStart="@+id/textHighGoal"
+        android:layout_marginStart="@dimen/_157sdp"
+        android:layout_alignStart="@+id/textTitleObs"
         android:textColor="#646262" />
 
     <TextView
@@ -281,7 +282,7 @@
         android:singleLine="false"
         android:textColor="#444040"
         android:layout_alignTop="@+id/resultPortcullis"
-        android:layout_alignStart="@+id/buttonDelete" />
+        android:layout_alignStart="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -290,8 +291,9 @@
         android:singleLine="false"
         android:text="Yes/No"
         android:textColor="#444040"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:layout_above="@+id/resultChevalFrise"
-        android:layout_toEndOf="@+id/buttonDelete" />
+        android:layout_toEndOf="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -301,7 +303,7 @@
         android:singleLine="false"
         android:textColor="#444040"
         android:layout_alignTop="@+id/resultChevalFrise"
-        android:layout_alignStart="@+id/buttonDelete" />
+        android:layout_alignStart="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -310,8 +312,9 @@
         android:singleLine="false"
         android:text="Yes/No"
         android:textColor="#444040"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:layout_above="@+id/resultMoat"
-        android:layout_toEndOf="@+id/buttonDelete" />
+        android:layout_toEndOf="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -321,7 +324,7 @@
         android:singleLine="false"
         android:textColor="#444040"
         android:layout_alignTop="@+id/resultMoat"
-        android:layout_alignStart="@+id/buttonDelete" />
+        android:layout_alignStart="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -330,8 +333,9 @@
         android:singleLine="false"
         android:text="Answer"
         android:textColor="#444040"
+        android:layout_marginLeft="@dimen/_10sdp"
         android:layout_above="@+id/resultRamparts"
-        android:layout_toEndOf="@+id/buttonDelete" />
+        android:layout_toEndOf="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -351,7 +355,7 @@
         android:singleLine="false"
         android:textColor="#444040"
         android:layout_alignTop="@+id/resultSallyPort"
-        android:layout_alignStart="@+id/buttonDelete" />
+        android:layout_alignStart="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -360,31 +364,19 @@
         android:singleLine="false"
         android:text="Yes/No"
         android:textColor="#444040"
-        android:layout_above="@+id/resultRockWall"
-        android:layout_toEndOf="@+id/buttonDelete" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:background="@color/colorPrimary"
-        android:text="Delete"
-        android:id="@+id/buttonDelete"
-        android:onClick=""
-        android:layout_marginStart="46dp"
-        android:layout_below="@+id/resultLowBar"
-        android:layout_toEndOf="@+id/resultHighGoalAuto" />
+        android:layout_above="@+id/resultRockWall"
+        android:layout_toEndOf="@+id/textTitleTeleoperated" />
 
     <TextView
         android:layout_width="123dp"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
         android:text="Team:"
-        android:textSize="18dp"
+        android:textSize="@dimen/_14sdp"
         android:textColor="#444040"
         android:textStyle="bold"
         android:layout_alignBottom="@+id/resultTeamNumber"
         android:layout_alignStart="@+id/textTitleObs"
         android:layout_alignEnd="@+id/textLowGoalAuto" />
-
 </RelativeLayout>

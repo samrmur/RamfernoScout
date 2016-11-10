@@ -13,17 +13,18 @@ public class DatabaseHelperVideo extends SQLiteOpenHelper {
     //Declares and initializes all database string variables
     public static final String DATABASE_NAME = "Video.db";
     private static final int DATABASE_VERSION = 3;
-    private static final String CREATE_QUERY = "CREATE TABLE " + DatabaseContractVideo.NewDataInfo.TABLE_NAME + "(" +
-            DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH + " TEXT," + DatabaseContractVideo.NewDataInfo.COL_TEAM +
+    private static final String CREATE_QUERY = "CREATE TABLE " +
+            DatabaseContractVideo.NewDataInfo.TABLE_NAME + "(" +
+            DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH + " TEXT," +
+            DatabaseContractVideo.NewDataInfo.COL_TEAM +
             " TEXT);";
 
     public DatabaseHelperVideo(Context context) {
-        //Calls on context, the database name and the database version
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
         //Creates log report hat indicates the database has either been created or opened
         Log.e("DATABASE OPERATIONS", "Video Database created / opened ...");
-    } //End of DatabaseHelperMatch
+    } //End of DatabaseHelperVideo
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -34,7 +35,8 @@ public class DatabaseHelperVideo extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS", "Match Table created...");
     } //End of onCreate
 
-    //This method will add information into the string values in the corresponding database contract
+    //This method will add information into the string values in the corresponding database
+    //contract
     public void addInformation(String eVideoPath, String eTeam, SQLiteDatabase db) {
         //Declares and instantiates object
         ContentValues contentValues = new ContentValues();
@@ -50,16 +52,20 @@ public class DatabaseHelperVideo extends SQLiteOpenHelper {
         Log.e("DATABASE OPERATIONS", "One row inserted...");
     } //End of addInformation
 
-    //This method will get user entered data from the database and return that data to be used elsewhere
+    //This method will get user entered data from the database and return that data to be used
+    //elsewhere
     public Cursor getInformation(SQLiteDatabase db){
         //Declares cursor object
         Cursor cursor;
 
-        //Creates string array containing all string values from its respective the database contract
-        String[] projections = {DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH, DatabaseContractVideo.NewDataInfo.COL_TEAM};
+        //Creates string array containing all string values from its respective the database
+        //contract
+        String[] projections = {DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH,
+                DatabaseContractVideo.NewDataInfo.COL_TEAM};
 
         //Adds string array of data to the cursor
-        cursor = db.query(DatabaseContractVideo.NewDataInfo.TABLE_NAME, projections, null, null, null, null, null);
+        cursor = db.query(DatabaseContractVideo.NewDataInfo.TABLE_NAME, projections,
+                null, null, null, null, null);
 
         //Returns cursor
         return cursor;
