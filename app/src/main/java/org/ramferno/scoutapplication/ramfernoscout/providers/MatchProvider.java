@@ -7,7 +7,7 @@
  * to them then later on retrieved to be displayed in a ListView.
  */
 
-//Declare package
+//Import package
 package org.ramferno.scoutapplication.ramfernoscout.providers;
 
 //Start of ScoutProvider

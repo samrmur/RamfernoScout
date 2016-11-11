@@ -1,3 +1,13 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: TeamInfoTabThreeFragment
+ * LAST EDITED: November 11th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class contains adds rows of data to a ListView programmatically without the help of a
+ * user, then it displays that data.
+ */
+
+//Import required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.os.Bundle;
@@ -13,38 +23,39 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.TeamInfoTabThreePro
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+//Start of TeamInfoTabThreeFragment
 public class TeamInfoTabThreeFragment extends Fragment {
     public TeamInfoTabThreeFragment() {
         // Required empty public constructor
     } //End of TeamInfoTabThreeFragment
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //Inflates the layout for the fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        //Inflate the layout for the fragment
         View view = inflater.inflate(R.layout.fragment_team_info_tab_three, container, false);
 
-        //Gets ListView rows from GetTabThreeResults and adds them to an ArrayList connect to the TeamInfoTabThreeProvider class
+        //Get ListView rows from GetTabThreeResults and add them to an ArrayList connect to the
+        //TeamInfoTabThreeProvider class
         ArrayList<TeamInfoTabThreeProvider> tabThreeResults = GetTabThreeResults();
 
-        //Instantiates ListView and declares xml object for ListView
+        //Declare ListView and connect it to the corresponding xml object
         final ListView tabThreeListView = (ListView) view.findViewById(R.id.listArchiveTournies);
 
-        //Sets the adapter for the ListView and implements data from the tabThreeResults ArrayList into the adapter
+        //Set the adapter for the ListView and implement data from the tabThreeResults ArrayList
+        //into the adapter
         tabThreeListView.setAdapter(new TabThreeListAdapter(getContext(), tabThreeResults));
 
         //Returns view
         return view;
     } //End of onCreateVIew
 
-    //Programmatically adds data to ListView without user assistance
+    //Programmatically add data to ListView without user assistance
     private ArrayList<TeamInfoTabThreeProvider> GetTabThreeResults(){
-        //Declares and instantiates object
+        //Declare and instantiate object
         ArrayList<TeamInfoTabThreeProvider> results = new ArrayList<TeamInfoTabThreeProvider>();
 
-        //Adds first row of data
+        //Add first row of data
         TeamInfoTabThreeProvider info1 = new TeamInfoTabThreeProvider();
         info1.setTournamentName("Windsor Essex Great Lakes Regional");
         info1.setYear("2016");
@@ -52,7 +63,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info1.setRecord("1-8-0");
         results.add(info1);
 
-        //Adds second row of data
+        //Add second row of data
         TeamInfoTabThreeProvider info2 = new TeamInfoTabThreeProvider();
         info2.setTournamentName("Windsor Essex Great Lakes Regional");
         info2.setYear("2015");
@@ -60,7 +71,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info2.setRecord("4-6-0");
         results.add(info2);
 
-        //Adds third row of data
+        //Add third row of data
         TeamInfoTabThreeProvider info3 = new TeamInfoTabThreeProvider();
         info3.setTournamentName("Waterloo Regional");
         info3.setYear("2014");
@@ -68,7 +79,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info3.setRecord("4-11-0");
         results.add(info3);
 
-        //Adds forth row of data
+        //Add forth row of data
         TeamInfoTabThreeProvider info4 = new TeamInfoTabThreeProvider();
         info4.setTournamentName("Newton Division");
         info4.setYear("2013");
@@ -76,7 +87,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info4.setRecord("3-5-0");
         results.add(info4);
 
-        //Adds fifth row of data
+        //Add fifth row of data
         TeamInfoTabThreeProvider info5 = new TeamInfoTabThreeProvider();
         info5.setTournamentName("Greater Toronto West Regional");
         info5.setYear("2013");
@@ -84,7 +95,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info5.setRecord("8-5-0");
         results.add(info5);
 
-        //Adds sixth row of data
+        //Add sixth row of data
         TeamInfoTabThreeProvider info6 = new TeamInfoTabThreeProvider();
         info6.setTournamentName("Waterloo Regional");
         info6.setYear("2013");
@@ -92,7 +103,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info6.setRecord("9-10-0");
         results.add(info6);
 
-        //Adds seventh row of data
+        //Add seventh row of data
         TeamInfoTabThreeProvider info7 = new TeamInfoTabThreeProvider();
         info7.setTournamentName("Waterloo Regional");
         info7.setYear("2012");
@@ -100,7 +111,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info7.setRecord("7-4-0");
         results.add(info7);
 
-        //Adds eighth row of data
+        //Add eighth row of data
         TeamInfoTabThreeProvider info8 = new TeamInfoTabThreeProvider();
         info8.setTournamentName("Archimedes Division");
         info8.setYear("2011");
@@ -108,7 +119,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info8.setRecord("3-7-0");
         results.add(info8);
 
-        //Adds ninth row of data
+        //Add ninth row of data
         TeamInfoTabThreeProvider info9 = new TeamInfoTabThreeProvider();
         info9.setTournamentName("Waterloo Regional");
         info9.setYear("2011");
@@ -116,7 +127,7 @@ public class TeamInfoTabThreeFragment extends Fragment {
         info9.setRecord("9-8-0 ");
         results.add(info9);
 
-        //Returns results
+        //Return results
         return results;
     } //End of GetTabThreeResults
 } //End of class
