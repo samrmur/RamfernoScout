@@ -7,7 +7,7 @@
  * This class will download data from the database on the local server.
  */
 
-//Declare package and import classes
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.downloaders;
 
 import android.app.ProgressDialog;

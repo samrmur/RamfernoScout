@@ -1,13 +1,13 @@
 /**
  * NAME: Samer Alabi
  * CLASS: AddScoutDataFragment
- * LAST EDITED: November 4th, 2016
+ * LAST EDITED: November 11th, 2016
  * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
  * This class is a fragment which contains CheckBox and EditText objects that a user will input
  * or change the input that will be stored in a database then later displayed in a ListView
  */
 
-//Declare package and import classes
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.os.Bundle;
@@ -195,6 +195,11 @@ public class AddScoutDataFragment extends Fragment {
             public void onClick(View v) {
                 //Check if all required slots have been filled in
                 try {
+                    //Check if EditText is empty
+                    if (tTelePlay.getText().toString().trim().length() == 0) {
+                        throw new NumberFormatException();
+                    } //End of if statement
+
                     //Declare and initialize variable
                     String ipAddress;
 

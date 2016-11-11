@@ -1,3 +1,14 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: TeamInfoFragment
+ * LAST EDITED: November 11th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class contains a TabLayout object which contains three tabs, one with buttons that links
+ * to team-related web pages and two tabs with ListView objects that display the team's history
+ * of competitions and awards won.
+ */
+
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.os.Bundle;
@@ -11,11 +22,9 @@ import android.view.ViewGroup;
 import org.ramferno.scoutapplication.ramfernoscout.adapters.InfoPagerAdapter;
 import org.ramferno.scoutapplication.ramfernoscout.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+//Start of TeamInfoFragment
 public class TeamInfoFragment extends Fragment {
-    //Declares Android UI objects
+    //Declare Android UI objects
     TabLayout tabLayout;
     ViewPager viewPager;
     InfoPagerAdapter infoPagerAdapter;
@@ -25,24 +34,25 @@ public class TeamInfoFragment extends Fragment {
     } //End of TeamInfoFragment
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //Inflates the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        //Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_team_info, container, false);
 
-        //Initializes variables
+        //Initialize variables
         tabLayout = (TabLayout) view.findViewById(R.id.infoTabLayout);
         viewPager = (ViewPager) view.findViewById(R.id.infoPager);
 
-        //Adds tabs to viewPager
+        //Add tabs to viewPager
         infoPagerAdapter = new InfoPagerAdapter(getFragmentManager());
         infoPagerAdapter.addFragments(new TeamInfoTabOneFragment(), "Team Info");
         infoPagerAdapter.addFragments(new TeamInfoTabTwoFragment(), "Achievements");
         infoPagerAdapter.addFragments(new TeamInfoTabThreeFragment(), "Past Tournaments");
 
-        //Sets adapter for viewPager
+        //Set adapter for viewPager
         viewPager.setAdapter(infoPagerAdapter);
 
-        //Sets up Tab Layout with View Pager
+        //Setup Tab Layout with View Pager
         tabLayout.setupWithViewPager(viewPager);
 
         //Returns view

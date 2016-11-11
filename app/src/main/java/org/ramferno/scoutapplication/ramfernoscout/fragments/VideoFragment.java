@@ -1,3 +1,12 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: VideoFragment
+ * LAST EDITED: November 11th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class displays SQLite database information in a ListView object.
+ */
+
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.database.Cursor;
@@ -17,11 +26,9 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.DatabaseProviderVid
 import org.ramferno.scoutapplication.ramfernoscout.adapters.ListVideoInfoAdapter;
 import org.ramferno.scoutapplication.ramfernoscout.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+//
 public class VideoFragment extends Fragment {
-    //Declares Android UI & Database objects
+    //Declare Android UI & Database objects
     FloatingActionButton addVideoScout;
     ListView eListVideoInfo;
     SQLiteDatabase sqLiteDatabase;
@@ -30,44 +37,41 @@ public class VideoFragment extends Fragment {
     ListVideoInfoAdapter listVideoInfoAdapter;
 
     public VideoFragment() {
-        // Required empty public constructor
+        //Required empty public constructor
     } //End of VideoFragment
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //Inflates layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        //Inflate layout for this fragment
         View view = inflater.inflate(R.layout.fragment_video, container, false);
 
-        //Instantiates ListView object with the xml ListView object
+        //Declare and instantiate objects and classes
         eListVideoInfo = (ListView) view.findViewById(R.id.listVideoInfo);
-
-        //Instantiates ArrayAdapter with Application Context and inflates with row layout
-        listVideoInfoAdapter = new ListVideoInfoAdapter(getActivity().getApplicationContext(), R.layout.row_layout_video);
-
-        //Sets adapter for the ListView
-        eListVideoInfo.setAdapter(listVideoInfoAdapter);
-
-        //Instantiates Database Helper with Application Context
+        listVideoInfoAdapter = new ListVideoInfoAdapter(getActivity().getApplicationContext(),
+                R.layout.row_layout_video);
         databaseHelperVideo = new DatabaseHelperVideo(getActivity().getApplicationContext());
 
-        //Gets readable database through Database Helper
+        //Retrieve the information from the SQLite database
+        eListVideoInfo.setAdapter(listVideoInfoAdapter);
         sqLiteDatabase = databaseHelperVideo.getReadableDatabase();
-
-        //Gets information from Database Helper and adds it to cursor
         cursor = databaseHelperVideo.getInformation(sqLiteDatabase);
 
-        //Checks if information is available in cursor
+        //Check if information is available in cursor
         if(cursor.moveToFirst()){
             do {
                 //Declare all strings
                 final String videoPath, team;
 
                 //Get strings from cursor
-                videoPath = cursor.getString(cursor.getColumnIndex(DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH));
-                team =  cursor.getString(cursor.getColumnIndex(DatabaseContractVideo.NewDataInfo.COL_TEAM));
+                videoPath = cursor.getString(cursor.getColumnIndex
+                        (DatabaseContractVideo.NewDataInfo.COL_VIDEO_PATH));
+                team =  cursor.getString(cursor.getColumnIndex
+                        (DatabaseContractVideo.NewDataInfo.COL_TEAM));
 
                 //Get methods from DatabaseProviderVideo
-                DatabaseProviderVideo databaseProviderVideo = new DatabaseProviderVideo(videoPath, team);
+                DatabaseProviderVideo databaseProviderVideo = new
+                        DatabaseProviderVideo(videoPath, team);
 
                 //Pass objects to add method
                 listVideoInfoAdapter.add(databaseProviderVideo);
@@ -75,30 +79,20 @@ public class VideoFragment extends Fragment {
             } while (cursor.moveToNext());
         } //End of if statement
 
-        //Instantiates Floating Action Button with corresponding xml object
+        //Change fragment to VideoFragment with animations
         addVideoScout = (FloatingActionButton) view.findViewById(R.id.fabVideo);
-
-        //Event created on button click that goes from VideoFragment to AddVideoDataFragment
         addVideoScout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Declares and instantiates fragment
                 AddVideoDataFragment fragment = new AddVideoDataFragment();
-
-                //Begins transaction between one fragment to another
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-
-                //Gets custom created animations and uses them during transactions
-                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
-
-                //Replaces original fragment with new fragment
+                fragmentTransaction.setCustomAnimations(R.anim.enter_from_right,
+                        R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
-
-                //Commits the transaction
                 fragmentTransaction.commit();
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Returns view
+        //Return view
         return view;
     } //End of onCreateView
 } //End of class

@@ -1,3 +1,15 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: MatchFragment
+ * LAST EDITED: November 11th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class contains a ListView that displays downloaded and parsed data from a database
+ * server. The class contains two button instructions, one when pressed will download and parse
+ * data and one when pressed that switches to a fragment where a user can enter data to be
+ * added to a database server.
+ */
+
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.os.Bundle;
@@ -15,7 +27,7 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.AddressProvider;
 
 //Start of MatchFragment
 public class MatchFragment extends Fragment {
-    //Android UI & Database objects
+    //Declare Android UI objects
     FloatingActionButton addDataMatch, refreshData;
     ListView eListMatchInfo;
 

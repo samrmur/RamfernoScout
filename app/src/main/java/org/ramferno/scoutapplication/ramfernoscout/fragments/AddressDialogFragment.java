@@ -7,7 +7,7 @@
  * server is located on.
  */
 
-//Declare package and import classes
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.app.AlertDialog;

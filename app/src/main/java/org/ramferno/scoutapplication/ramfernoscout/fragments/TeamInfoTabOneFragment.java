@@ -1,3 +1,15 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: TeamInfoTabOneFragment
+ * LAST EDITED: November 11th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class contains instructions for all objects placed within the first tab created by the
+ * tab layout in TeamInfoFragment. The class uses a ViewFlipper objects and makes a slideshow
+ * with using multiple different images. This class also connects the user to team-related web
+ * pages on specific button clicks.
+ */
+
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.content.Intent;
@@ -13,9 +25,7 @@ import android.widget.ViewFlipper;
 
 import org.ramferno.scoutapplication.ramfernoscout.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+//Start of TeamInfoTabOneFragment
 public class TeamInfoTabOneFragment extends Fragment {
    //Declares Android UI objects
     ViewFlipper viewFlipper;
@@ -26,25 +36,26 @@ public class TeamInfoTabOneFragment extends Fragment {
     } //End of TeamInfoTabOneFragment
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //Inflates the layout for the fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        //Inflate the layout for the fragment
         View view =  inflater.inflate(R.layout.fragment_team_info_tab_one, container, false);
 
-        //Creates array of images for VIewFlipper
-        int gallery_grid_Images[]={R.drawable.galleryimage1,R.drawable.galleryimage2,R.drawable.galleryimage3,
-                R.drawable.galleryimage4, R.drawable.galleryimage5, R.drawable.galleryimage6, R.drawable.galleryimage7,
-                R.drawable.galleryimage8};
+        //Create array of images for VIewFlipper
+        int gallery_grid_Images[] = {R.drawable.galleryimage1, R.drawable.galleryimage2,
+                R.drawable.galleryimage3, R.drawable.galleryimage4, R.drawable.galleryimage5,
+                R.drawable.galleryimage6, R.drawable.galleryimage7, R.drawable.galleryimage8};
 
-        //Instantiates ViewFlipper and declares xml object for ViewFlipper
+        //Declare ViewFlipper and connect it to corresponding xml object
         viewFlipper = (ViewFlipper) view.findViewById(R.id.flipperTeamImages);
 
         //Removes blank ViewFlipper view
         viewFlipper.removeAllViews();
 
         //Adds Image Array into ViewFlipper
-        for(int i=0;i<gallery_grid_Images.length;i++) {
+        for(int i = 0; i < gallery_grid_Images.length; i++) {
             setFlipperImage(gallery_grid_Images[i]);
-        } //End of for statment
+        } //End of for statement
 
         //Starts the ViewFlipper
         viewFlipper.setAutoStart(true);
@@ -59,10 +70,8 @@ public class TeamInfoTabOneFragment extends Fragment {
         //Starts flipping the ViewFlipper
         viewFlipper.startFlipping();
 
-        //Instantiates openWebsite Button and declares xml object for openWebsite Button
-        openWebsite = (Button) view.findViewById(R.id.buttonWebsite);
-
         //Opens team website on button click
+        openWebsite = (Button) view.findViewById(R.id.buttonWebsite);
         openWebsite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,10 +81,8 @@ public class TeamInfoTabOneFragment extends Fragment {
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Instantiates likeFB Button and declares xml object for followFB Button
-        likeFB = (Button) view.findViewById(R.id.buttonLikeFB);
-
         //Opens facebook page on button click
+        likeFB = (Button) view.findViewById(R.id.buttonLikeFB);
         likeFB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,10 +92,8 @@ public class TeamInfoTabOneFragment extends Fragment {
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Instantiates followTwit Button and declares xml object for followTwit Button
-        followTwit = (Button) view.findViewById(R.id.buttonFollowTwit);
-
         //Opens twitter page on button click
+        followTwit = (Button) view.findViewById(R.id.buttonFollowTwit);
         followTwit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

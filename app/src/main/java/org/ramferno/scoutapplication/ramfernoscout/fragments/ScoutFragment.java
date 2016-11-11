@@ -27,7 +27,7 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.AddressProvider;
 
 //Start of ScoutFragment
 public class ScoutFragment extends Fragment {
-    //Declares Android UI objects
+    //Declare Android UI objects
     FloatingActionButton addDataScout, refreshData;
     ListView eListScoutInfo;
 
@@ -38,11 +38,9 @@ public class ScoutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //Inflates layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_scout, container, false);
-
-        //Instantiate ListView object with the xml ListView object
-        eListScoutInfo = (ListView) view.findViewById(R.id.listScoutInfo);
+        //Declare and initialize objects
+        View view = inflater.inflate(R.layout.fragment_scout, container, false);  //View object
+        eListScoutInfo = (ListView) view.findViewById(R.id.listScoutInfo);  //ListView object
 
         //Add instructions to the Refresh FAB that will download the data from the database server
         refreshData = (FloatingActionButton) view.findViewById(R.id.fabRefreshScout);

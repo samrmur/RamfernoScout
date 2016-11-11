@@ -7,7 +7,7 @@
  * or change the input that will be stored in a database then later displayed in a ListView
  */
 
-//Declare package and import classes
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.fragments;
 
 import android.os.Bundle;

@@ -8,7 +8,7 @@
  * them then later on retrieved to be displayed in a ListView.
  */
 
-//Declare package and import classes
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.connectors;
 
 import java.io.IOException;

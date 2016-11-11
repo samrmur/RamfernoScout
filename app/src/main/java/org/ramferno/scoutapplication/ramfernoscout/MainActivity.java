@@ -7,7 +7,7 @@
  * instructions that is used to switch between the main fragments of the application.
  */
 
-//Declare package and import classes
+//Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout;
 
 import android.app.FragmentManager;
