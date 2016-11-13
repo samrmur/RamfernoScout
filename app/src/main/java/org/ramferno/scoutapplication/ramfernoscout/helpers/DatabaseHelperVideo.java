@@ -1,3 +1,13 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: DatabaseHelperVideo
+ * LAST EDITED: November 12th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class will create a database (if already created, open), create a database table table,
+ * and add rows user-inputted data into the database.
+ */
+
+//Import packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.helpers;
 
 import android.content.ContentValues;
@@ -9,6 +19,7 @@ import android.util.Log;
 
 import org.ramferno.scoutapplication.ramfernoscout.contracts.DatabaseContractVideo;
 
+//Start of DatabaseHelperVideo
 public class DatabaseHelperVideo extends SQLiteOpenHelper {
     //Declares and initializes all database string variables
     private static final String DATABASE_NAME = "Video.db";

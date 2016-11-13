@@ -1,3 +1,13 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: TabThreeListAdapter
+ * LAST EDITED: November 12th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class will set the text for TextViews that are in ListView. The data inserted has been
+ * entered programmatically.
+ */
+
+//Import required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.adapters;
 
 import android.content.Context;
@@ -12,6 +22,7 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.TeamInfoTabThreePro
 
 import java.util.ArrayList;
 
+//Start of TabThreeListAdapter
 public class TabThreeListAdapter extends BaseAdapter {
     //Declares objects
     private static ArrayList<TeamInfoTabThreeProvider> tabThreeArrayList;
@@ -42,12 +53,13 @@ public class TabThreeListAdapter extends BaseAdapter {
         //Checks if convertView is empty or not
         if (convertView == null) {
             //Inflates convertView with corresponding row layout
-            convertView = mInflater.inflate(R.layout.row_layout_tab_three, null);
+            convertView = mInflater.inflate(R.layout.row_layout_tab_three, parent);
 
             //Instantiates ViewHolder object
             holder = new ViewHolder();
 
-            //Instantiates TextView objects from ViewHolder with corresponding xml objects
+            //Instantiates TextView objects from ViewHolder with
+            //corresponding xml objects
             holder.txtTournamentName = (TextView) convertView.findViewById(R.id.textTournamentName);
             holder.txtYear = (TextView) convertView.findViewById(R.id.textTournamentYear);
             holder.txtRank = (TextView) convertView.findViewById(R.id.textTournamentRank);
@@ -60,7 +72,8 @@ public class TabThreeListAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         } //End of if statement
 
-        //Sets text values for TextView objects by getting values from ArrayList in TabInfoThreeProvider
+        //Sets text values for TextView objects by getting values from ArrayList in
+        //TabInfoThreeProvider
         holder.txtTournamentName.setText(tabThreeArrayList.get(position).getTournamentName());
         holder.txtYear.setText(tabThreeArrayList.get(position).getYear());
         holder.txtRank.setText(tabThreeArrayList.get(position).getRank());
@@ -70,7 +83,7 @@ public class TabThreeListAdapter extends BaseAdapter {
         return convertView;
     } //End of getView
 
-    static class ViewHolder {
+    private static class ViewHolder {
         //Declares TextView objects
         TextView txtTournamentName;
         TextView txtYear;

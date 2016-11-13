@@ -1,3 +1,14 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: ListVideoInfoAdapter
+ * LAST EDITED: November 12th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class contains instructions for the play and delete buttons displayed in the ListView
+ * for the VideoFragment. It also handles the displaying of the team text in the ListView as
+ * well.
+ */
+
+//Import required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.adapters;
 
 import android.content.Context;
@@ -20,16 +31,17 @@ import org.ramferno.scoutapplication.ramfernoscout.providers.DatabaseProviderVid
 import java.util.ArrayList;
 import java.util.List;
 
+//Start of ListVideoInfoAdapter
 public class ListVideoInfoAdapter extends ArrayAdapter {
     //Declares and instantiates objects
-    List list = new ArrayList();
-    DatabaseHelperVideo databaseHelperVideo = new DatabaseHelperVideo(getContext());
+    private List list = new ArrayList();
+    private DatabaseHelperVideo databaseHelperVideo = new DatabaseHelperVideo(getContext());
 
     public ListVideoInfoAdapter (Context context, int resource) {
         super(context, resource);
     } //End of ListVideoInfoAdapter
 
-    static class LayoutHandler {
+    private static class LayoutHandler {
         //Declares Android object
         TextView TEAM;
 
@@ -54,7 +66,7 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
     } //End of getItem
 
     //Deletes a row in the database
-    public void deleteRow(String rowId){
+    private void deleteRow(String rowId){
         //Retrieves database in writable form
         SQLiteDatabase db = databaseHelperVideo.getWritableDatabase();
 
@@ -73,7 +85,8 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
         //Checks to see if row is empty
         if (row == null){
             //Declares and instantiates LayoutInflater object
-            LayoutInflater layoutInflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater layoutInflater = (LayoutInflater) this.getContext()
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             //Inflates the row view with the row layout using the layout inflater
             row = layoutInflater.inflate(R.layout.row_layout_video, parent, false);
@@ -91,16 +104,21 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
             //Gets tag from row and implements it into the layout handler if row has data
             layoutHandler = (LayoutHandler) row.getTag();
         } //End of if statement
-        final DatabaseProviderVideo databaseProviderVideo = (DatabaseProviderVideo) this.getItem(position);
+        final DatabaseProviderVideo databaseProviderVideo =
+                (DatabaseProviderVideo) this.getItem(position);
 
-        //Sets the text of the layout handler strings through the database provider
-        layoutHandler.TEAM.setText(databaseProviderVideo.getTeam());
-        layoutHandler.VIDEO_PATH = databaseProviderVideo.getVideoPath();
+        //Catch null pointer error
+        try {
+            //Sets the text of the layout handler strings through the database provider
+            layoutHandler.TEAM.setText(databaseProviderVideo.getTeam());
+            layoutHandler.VIDEO_PATH = databaseProviderVideo.getVideoPath();
+        }
+        catch (NullPointerException e) {
+            layoutHandler.TEAM.setText("No team");
+        } //End of try statement
 
-        //Declares and instantiates play button
+        //Plays video on button click
         Button playBtn = (Button) row.findViewById(R.id.buttonPlayVideo);
-
-        //Creates event on button click
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,8 +127,10 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
 
                 //Checks if there is a video file available
                 if (layoutHandler.VIDEO_PATH == null) {
-                    //Creates message on screen that tells the user that there is no available video to play
-                    Toast.makeText(getContext(), "Video file not found", Toast.LENGTH_SHORT).show();
+                    //Creates message on screen that tells the user that there is no available
+                    //video to play
+                    Toast.makeText(getContext(), "Video file not found",
+                            Toast.LENGTH_SHORT).show();
                 }
                 else {
                     //Parses Video Path string to uri format
@@ -126,13 +146,9 @@ public class ListVideoInfoAdapter extends ArrayAdapter {
             } //End of onClick
         }); //End of setOnClickListener
 
-        //Declares and instantiates delete button
+        //Deletes row in database
         Button deleteBtn = (Button) row.findViewById(R.id.buttonDeleteVideo);
-
-        //Sets tag on delete button that will enable the button to delete the row in the database
         deleteBtn.setTag(databaseProviderVideo.getTeam());
-
-        //Creates event on button click
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

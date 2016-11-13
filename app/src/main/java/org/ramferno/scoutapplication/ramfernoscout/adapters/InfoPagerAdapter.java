@@ -1,3 +1,13 @@
+/**
+ * NAME: Samer Alabi
+ * CLASS: InfoPagerAdapter
+ * LAST EDITED: November 12th, 2016
+ * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
+ * This class will contains the array lists of the tab fragments and their titles for the tab
+ * layout displayed in the team info fragment
+ */
+
+//Import required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout.adapters;
 
 import android.support.v4.app.Fragment;
@@ -6,9 +16,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 
+//Start of InfoPagerAdapter
 public class InfoPagerAdapter extends FragmentStatePagerAdapter {
-    ArrayList<Fragment> fragments = new ArrayList<>();
-    ArrayList<String> tabTitles = new ArrayList<>();
+    //Declare and instantiate objects
+    private ArrayList<Fragment> fragments = new ArrayList<>();
+    private ArrayList<String> tabTitles = new ArrayList<>();
 
     public void addFragments(Fragment fragments, String titles) {
         this.fragments.add(fragments);
