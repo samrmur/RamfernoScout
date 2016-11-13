@@ -11,7 +11,7 @@ import org.ramferno.scoutapplication.ramfernoscout.contracts.DatabaseContractVid
 
 public class DatabaseHelperVideo extends SQLiteOpenHelper {
     //Declares and initializes all database string variables
-    public static final String DATABASE_NAME = "Video.db";
+    private static final String DATABASE_NAME = "Video.db";
     private static final int DATABASE_VERSION = 3;
     private static final String CREATE_QUERY = "CREATE TABLE " +
             DatabaseContractVideo.NewDataInfo.TABLE_NAME + "(" +
