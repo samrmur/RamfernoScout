@@ -10,8 +10,12 @@
 //Import all required packages and classes
 package org.ramferno.scoutapplication.ramfernoscout;
 
+import android.app.ActivityManager;
 import android.app.FragmentManager;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;

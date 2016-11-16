@@ -53,7 +53,7 @@ public class TabTwoListAdapter extends BaseAdapter {
         //Checks if convertView is empty or not
         if (convertView == null) {
             //Inflates convertView with corresponding row layout
-            convertView = mInflater.inflate(R.layout.row_layout_tab_two, parent);
+            convertView = mInflater.inflate(R.layout.row_layout_tab_two, null);
 
             //Instantiates ViewHolder object
             holder = new ViewHolder();

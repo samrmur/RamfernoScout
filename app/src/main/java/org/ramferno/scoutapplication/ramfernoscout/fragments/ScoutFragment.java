@@ -1,7 +1,7 @@
 /**
  * NAME: Samer Alabi
  * CLASS: ScoutFragment
- * LAST EDITED: November 5th, 2016
+ * LAST EDITED: November 15th, 2016
  * ------------------------------------ DESCRIPTION OF CLASS ------------------------------------
  * This class contains a ListView that displays downloaded and parsed data from a database
  * server. The class contains two button instructions, one when pressed will download and parse
@@ -42,29 +42,16 @@ public class ScoutFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_scout, container, false);  //View object
         eListScoutInfo = (ListView) view.findViewById(R.id.listScoutInfo);  //ListView object
 
+        //Attempt to retrieve data on object creation
+        getData();
+
         //Add instructions to the Refresh FAB that will download the data from the database server
         refreshData = (FloatingActionButton) view.findViewById(R.id.fabRefreshScout);
         refreshData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Declare and initialize variable
-                String ipAddress;
-
-                //Attempt to get IP Address from Provider
-                try {
-                    ipAddress = AddressProvider.getInstance().getAddress();
-                }
-                catch (NullPointerException e) {
-                    ipAddress = "";
-                } //End of try statement
-
-                //Insert IP address into full URL address
-                String urlAddress = "http://" + ipAddress +
-                        "/ramfernoscout/database/scoutretrieve.php";
-
-                //Download data
-                ScoutDownloader d = new ScoutDownloader(getActivity(),urlAddress,eListScoutInfo);
-                d.execute();
+                //Attempt to retrieve data
+                getData();
             } //End of onClick
         }); //End  of setOnClickListener
 
@@ -84,4 +71,25 @@ public class ScoutFragment extends Fragment {
         //Returns view
         return view;
     } //End of onCreateView
+
+    //Retrieve data from database server and display on fragment's ListView
+    public void getData() {
+        //Declare and initialize variable
+        String ipAddress;
+
+        //Attempt to get IP Address from Provider
+        try {
+            ipAddress = AddressProvider.getInstance().getAddress();
+        }
+        catch (NullPointerException e) {
+            ipAddress = "";
+        } //End of try statement
+
+        //Insert IP address into full URL address
+        String urlAddress = "http://" + ipAddress + "/ramfernoscout/database/scoutretrieve.php";
+
+        //Download data
+        ScoutDownloader d = new ScoutDownloader(getActivity(),urlAddress,eListScoutInfo);
+        d.execute();
+    } //End of getData
 } //End of class

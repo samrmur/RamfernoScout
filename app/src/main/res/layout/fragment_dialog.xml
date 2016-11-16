@@ -8,7 +8,7 @@
 
     <EditText
         android:id="@+id/enterIP"
-        android:ems="10"
+        android:ems="12"
         android:hint="IP Address"
         android:inputType="text"
         android:layout_width="96dp"

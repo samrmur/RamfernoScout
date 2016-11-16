@@ -53,7 +53,7 @@ public class TabThreeListAdapter extends BaseAdapter {
         //Checks if convertView is empty or not
         if (convertView == null) {
             //Inflates convertView with corresponding row layout
-            convertView = mInflater.inflate(R.layout.row_layout_tab_three, parent);
+            convertView = mInflater.inflate(R.layout.row_layout_tab_three, null);
 
             //Instantiates ViewHolder object
             holder = new ViewHolder();
