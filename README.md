@@ -20,4 +20,24 @@ After creating the shortcut, open up the server for the first time. You will kno
   <img src="http://i.imgur.com/jT4MkWE.png">
 </p>
 
-Next, two server files will need to be edited in order for the server 
+Next, two server files will need to be edited in order for the server to detect wireless connections. On normal install, WAMP Server will only connect to devices or software that are actually connected or are run locally on the server. To fix this, left-click on the server icon, hover over Apache, and open both "httpd.conf" and "httpd-vhosts.conf" in Notepad.
+
+<p align="center">
+  <img src="">
+</p>
+
+In the "httpd.conf" file, two sections will need to be edited. The first section is a directory that is denying acces to the server's filesystem, change everything in the directory block to the directory block provided below. The second section controls who can retrieve data from the server. Change that section to block provided in the second picture then save the file and exit it.
+
+<p align="center">
+  <img src="">
+</p>
+
+In the "httpd-vhosts.conf" file, only one section will need to be edited. In the directory block of the file, change it to the block provided in the picture below then save the file and exit it.
+
+<p align="center">
+  <img src="">
+</p>
+
+As a final check, right-click on the WAMP server icon, hover over Wamp Settings, and click on "Check httpd.conf syntax". This will check the file for any errors that may have occured. If an error comes up, look through the file again and make sure that there were no mistakes when editing the files. If no error pops up, left-click the WAMP server icon and click on "Restart All Services". If there are no errors, the server will restart and the server icon will come up as green again. Once that is done, the server is ready to take on wireless connections.
+
+### Importing MySQL Database & Adding PHP Files to the Server
